@@ -1,0 +1,8 @@
+nav
+  h2 Live Layout –
+    = @page_title
+
+hr
+
+#main
+  = @live_view_module.render(assigns)

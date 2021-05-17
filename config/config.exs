@@ -34,7 +34,8 @@ config :philomena, PhilomenaWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "xZYTon09JNRrj8snd7KL31wya4x71jmo5aaSSRmw1dGjWLRmEwWMTccwxgsGFGjM",
   render_errors: [view: PhilomenaWeb.ErrorView, accepts: ~w(html json)],
-  pubsub_server: Philomena.PubSub
+  pubsub_server: Philomena.PubSub,
+  live_view: [signing_salt: "bxvRXvPOSbl6/z/Dt4s2X2/9MO7kArZv"]
 
 config :phoenix, :template_engines,
   slim: PhoenixSlime.Engine,

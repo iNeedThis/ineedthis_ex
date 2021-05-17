@@ -5,7 +5,7 @@ footer#footer
     = for column <- footer_data["cols"] do
       .footercol
         h5 = column
-        
+
         = for row <- footer_data[column] do
           = if row["bold"] do
             strong

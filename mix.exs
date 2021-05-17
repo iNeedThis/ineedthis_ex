@@ -21,7 +21,7 @@ defmodule Philomena.MixProject do
   def application do
     [
       mod: {Philomena.Application, []},
-      extra_applications: [:logger, :canada, :runtime_tools]
+      extra_applications: [:logger, :canada, :runtime_tools, :os_mon]
     ]
   end
 
@@ -41,6 +41,7 @@ defmodule Philomena.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.14"},
       {:phoenix_live_reload, "~> 1.3", only: :dev},
+      {:floki, ">= 0.30.0", only: :test},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:ranch, "~> 1.6", override: true},
@@ -48,6 +49,7 @@ defmodule Philomena.MixProject do
       {:phoenix_slime, "~> 0.13"},
       {:phoenix_pubsub_redis, "~> 3.0"},
       {:ecto_network, "~> 1.3"},
+      {:ecto_psql_extras, "~> 0.2"},
       {:bcrypt_elixir, "~> 2.3"},
       {:pot, "~> 1.0"},
       {:secure_compare, "~> 0.1"},
@@ -67,6 +69,12 @@ defmodule Philomena.MixProject do
       {:castore, "~> 0.1"},
       {:mint, "~> 1.2"},
       {:exq, "~> 0.14"},
+
+      # LiveView
+      {:phoenix_live_view, "~> 0.15.4"},
+      {:phoenix_live_dashboard, "~> 0.1"},
+      {:telemetry_poller, "~> 0.4"},
+      {:telemetry_metrics, "~> 0.4"},
 
       # Linting
       {:credo, "~> 1.5", only: [:dev, :test], override: true},

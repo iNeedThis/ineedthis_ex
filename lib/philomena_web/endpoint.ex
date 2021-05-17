@@ -1,9 +1,20 @@
 defmodule PhilomenaWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :philomena
 
+  @session_options [
+    store: :cookie,
+    extra: "SameSite=Lax",
+    key: "_philomena_key",
+    signing_salt: "signed cookie",
+    encryption_salt: "authenticated encrypted cookie"
+  ]
+
   socket "/socket", PhilomenaWeb.UserSocket,
     websocket: true,
     longpoll: false
+
+  socket "/live", Phoenix.LiveView.Socket,
+    websocket: [connect_info: [session: @session_options]]
 
   # Overwrite remote_ip based on X-Forwarded-For
   plug RemoteIp
@@ -38,12 +49,7 @@ defmodule PhilomenaWeb.Endpoint do
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
-  plug Plug.Session,
-    store: :cookie,
-    extra: "SameSite=Lax",
-    key: "_philomena_key",
-    signing_salt: "signed cookie",
-    encryption_salt: "authenticated encrypted cookie"
+  plug Plug.Session, @session_options
 
   plug PhilomenaWeb.RenderTimePlug
   plug PhilomenaWeb.ReferrerPlug

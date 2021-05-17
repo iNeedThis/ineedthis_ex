@@ -2,14 +2,16 @@ defmodule PhilomenaWeb.Router do
   use PhilomenaWeb, :router
 
   import PhilomenaWeb.UserAuth
+  import Phoenix.LiveDashboard.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
-    plug :fetch_flash
+    plug :fetch_live_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug :fetch_current_user
+    plug :put_root_layout, {PhilomenaWeb.LayoutView, :root}
     plug PhilomenaWeb.ContentSecurityPolicyPlug
     plug PhilomenaWeb.CurrentFilterPlug
     plug PhilomenaWeb.ImageFilterPlug
@@ -319,6 +321,8 @@ defmodule PhilomenaWeb.Router do
     end
 
     scope "/admin", Admin, as: :admin do
+      live_dashboard "/dashboard", metrics: PhilomenaWeb.Telemetry, ecto_repos: [Philomena.Repo]
+
       resources "/reports", ReportController, only: [:index, :show] do
         resources "/claim", Report.ClaimController, only: [:create, :delete], singleton: true
         resources "/close", Report.CloseController, only: [:create], singleton: true

@@ -29,6 +29,7 @@ defmodule Philomena.Application do
       PhilomenaWeb.AdvertUpdater,
       PhilomenaWeb.UserFingerprintUpdater,
       PhilomenaWeb.UserIpUpdater,
+      PhilomenaWeb.Telemetry,
       PhilomenaWeb.Endpoint,
 
       # Connection drainer for SIGTERM
