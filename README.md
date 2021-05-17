@@ -1,6 +1,4 @@
-# Philomena
-![Philomena](/assets/static/images/phoenix.svg)
-
+# ineedthis
 ## Getting started
 On systems with `docker` and `docker-compose` installed, the process should be as simple as:
 
