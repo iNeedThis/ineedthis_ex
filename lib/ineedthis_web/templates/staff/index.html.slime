@@ -1,0 +1,19 @@
+h1 Staff
+.staff-block
+  = for {header, users} <- @categories do
+
+    = if Enum.any?(users) do
+      h4 = header
+
+      = for user <- users do
+        = if unavailable?(user) do
+          .profile-block
+            = render IneedthisWeb.UserAttributionView, "_user_avatar.html", object: %{user: user}, class: "avatar--125px avatar-disabled"
+            b.staff-title-muted
+              => user.name
+              | (Unavailable)
+        - else
+          a.profile-block href=Routes.profile_path(@conn, :show, user)
+            = render IneedthisWeb.UserAttributionView, "_user_avatar.html", object: %{user: user}, class: "avatar--125px"
+            b
+              => user.name

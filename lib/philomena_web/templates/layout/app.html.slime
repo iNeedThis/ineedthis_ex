@@ -1,9 +1,0 @@
-= render PhilomenaWeb.LayoutView, "_burger.html", assigns
-#container class=container_class(@current_user)
-  = render PhilomenaWeb.LayoutView, "_header.html", assigns
-  = render PhilomenaWeb.LayoutView, "_flash_warnings.html", assigns
-  main#content class=layout_class(@conn)
-    = @inner_content
-  = render PhilomenaWeb.LayoutView, "_footer.html", assigns
-  form.hidden: input.js-interaction-cache type="hidden" value="{}"
-  = clientside_data(@conn)

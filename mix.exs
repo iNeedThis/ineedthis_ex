@@ -1,9 +1,9 @@
-defmodule Philomena.MixProject do
+defmodule Ineedthis.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :philomena,
+      app: :ineedthis,
       version: "1.1.0",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -20,7 +20,7 @@ defmodule Philomena.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Philomena.Application, []},
+      mod: {Ineedthis.Application, []},
       extra_applications: [:logger, :canada, :runtime_tools, :os_mon]
     ]
   end

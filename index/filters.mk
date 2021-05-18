@@ -1,4 +1,4 @@
-DATABASE ?= philomena
+DATABASE ?= ineedthis
 ELASTICSEARCH_URL ?= http://localhost:9200/
 ELASTICDUMP ?= elasticdump
 # uncomment if getting "redirection unexpected" error on dump_jsonl

@@ -1,4 +1,4 @@
-DATABASE ?= philomena
+DATABASE ?= ineedthis
 ELASTICDUMP ?= elasticdump
 .ONESHELL:
 

@@ -13,8 +13,8 @@ config :logger,
     [application: :mint]
   ]
 
-config :philomena,
-  ecto_repos: [Philomena.Repo]
+config :ineedthis,
+  ecto_repos: [Ineedthis.Repo]
 
 config :elastix,
   json_codec: Jason
@@ -25,16 +25,16 @@ config :exq,
   start_on_application: false
 
 config :canary,
-  repo: Philomena.Repo,
-  unauthorized_handler: {PhilomenaWeb.NotAuthorizedPlug, :call},
-  not_found_handler: {PhilomenaWeb.NotFoundPlug, :call}
+  repo: Ineedthis.Repo,
+  unauthorized_handler: {IneedthisWeb.NotAuthorizedPlug, :call},
+  not_found_handler: {IneedthisWeb.NotFoundPlug, :call}
 
 # Configures the endpoint
-config :philomena, PhilomenaWeb.Endpoint,
+config :ineedthis, IneedthisWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "xZYTon09JNRrj8snd7KL31wya4x71jmo5aaSSRmw1dGjWLRmEwWMTccwxgsGFGjM",
-  render_errors: [view: PhilomenaWeb.ErrorView, accepts: ~w(html json)],
-  pubsub_server: Philomena.PubSub,
+  render_errors: [view: IneedthisWeb.ErrorView, accepts: ~w(html json)],
+  pubsub_server: Ineedthis.PubSub,
   live_view: [signing_salt: "bxvRXvPOSbl6/z/Dt4s2X2/9MO7kArZv"]
 
 config :phoenix, :template_engines,

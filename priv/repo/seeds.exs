@@ -5,12 +5,12 @@
 # Inside the script, you can read and write to any of your
 # repositories directly:
 #
-#     Philomena.Repo.insert!(%Philomena.SomeSchema{})
+#     Ineedthis.Repo.insert!(%Ineedthis.SomeSchema{})
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-alias Philomena.{
+alias Ineedthis.{
   Repo,
   Comments.Comment,
   Filters.Filter,
@@ -26,10 +26,10 @@ alias Philomena.{
   StaticPages.StaticPage
 }
 
-alias Philomena.Elasticsearch
-alias Philomena.Users
-alias Philomena.Tags
-alias Philomena.Filters
+alias Ineedthis.Elasticsearch
+alias Ineedthis.Users
+alias Ineedthis.Tags
+alias Ineedthis.Filters
 import Ecto.Query
 
 IO.puts("---- Creating Elasticsearch indices")

@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.AddSeniorStaff do
+defmodule Ineedthis.Repo.Migrations.AddSeniorStaff do
   use Ecto.Migration
 
   def change do

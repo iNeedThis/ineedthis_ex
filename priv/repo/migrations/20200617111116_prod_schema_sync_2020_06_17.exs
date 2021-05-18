@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.ProdSchemaSync20200617 do
+defmodule Ineedthis.Repo.Migrations.ProdSchemaSync20200617 do
   use Ecto.Migration
 
   def change do

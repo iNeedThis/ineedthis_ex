@@ -1,0 +1,1 @@
+= render IneedthisWeb.CommentView, "_comment.html", comment: @comment, body: @body, conn: @conn
