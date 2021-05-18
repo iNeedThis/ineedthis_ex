@@ -1,8 +1,8 @@
-defmodule Philomena.UserNameChanges.UserNameChange do
+defmodule Ineedthis.UserNameChanges.UserNameChange do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
+  alias Ineedthis.Users.User
 
   schema "user_name_changes" do
     belongs_to :user, User

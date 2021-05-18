@@ -1,13 +1,13 @@
-defmodule Philomena.Badges do
+defmodule Ineedthis.Badges do
   @moduledoc """
   The Badges context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.Badges.Badge
-  alias Philomena.Badges.Uploader
+  alias Ineedthis.Badges.Badge
+  alias Ineedthis.Badges.Uploader
 
   @doc """
   Returns the list of badges.
@@ -131,7 +131,7 @@ defmodule Philomena.Badges do
     Badge.changeset(badge, %{})
   end
 
-  alias Philomena.Badges.Award
+  alias Ineedthis.Badges.Award
 
   @doc """
   Returns the list of badge_awards.

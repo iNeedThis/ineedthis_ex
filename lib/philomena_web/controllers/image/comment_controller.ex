@@ -1,21 +1,21 @@
-defmodule PhilomenaWeb.Image.CommentController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.CommentController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.CommentLoader
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.{Images.Image, Comments.Comment}
-  alias Philomena.UserStatistics
-  alias Philomena.Comments
-  alias Philomena.Images
+  alias IneedthisWeb.CommentLoader
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.{Images.Image, Comments.Comment}
+  alias Ineedthis.UserStatistics
+  alias Ineedthis.Comments
+  alias Ineedthis.Images
 
-  plug PhilomenaWeb.LimitPlug,
+  plug IneedthisWeb.LimitPlug,
        [time: 30, error: "You may only create a comment once every 30 seconds."]
        when action in [:create]
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:create, :edit, :update]
-  plug PhilomenaWeb.UserAttributionPlug when action in [:create]
+  plug IneedthisWeb.FilterBannedUsersPlug when action in [:create, :edit, :update]
+  plug IneedthisWeb.UserAttributionPlug when action in [:create]
 
-  plug PhilomenaWeb.CanaryMapPlug,
+  plug IneedthisWeb.CanaryMapPlug,
     create: :create_comment,
     edit: :create_comment,
     update: :create_comment
@@ -27,12 +27,12 @@ defmodule PhilomenaWeb.Image.CommentController do
     preload: [tags: :aliases]
 
   plug :verify_authorized when action in [:show]
-  plug PhilomenaWeb.FilterForcedUsersPlug when action in [:create, :edit, :update]
+  plug IneedthisWeb.FilterForcedUsersPlug when action in [:create, :edit, :update]
 
   # Undo the previous private parameter screwery
-  plug PhilomenaWeb.LoadCommentPlug, [param: "id", show_hidden: true] when action in [:show]
-  plug PhilomenaWeb.LoadCommentPlug, [param: "id"] when action in [:edit, :update]
-  plug PhilomenaWeb.CanaryMapPlug, create: :create, edit: :edit, update: :edit
+  plug IneedthisWeb.LoadCommentPlug, [param: "id", show_hidden: true] when action in [:show]
+  plug IneedthisWeb.LoadCommentPlug, [param: "id"] when action in [:edit, :update]
+  plug IneedthisWeb.CanaryMapPlug, create: :create, edit: :edit, update: :edit
 
   plug :authorize_resource,
     model: Comment,
@@ -72,10 +72,10 @@ defmodule PhilomenaWeb.Image.CommentController do
 
     case Comments.create_comment(image, attributes, comment_params) do
       {:ok, %{comment: comment}} ->
-        PhilomenaWeb.Endpoint.broadcast!(
+        IneedthisWeb.Endpoint.broadcast!(
           "firehose",
           "comment:create",
-          PhilomenaWeb.Api.Json.CommentView.render("show.json", %{comment: comment})
+          IneedthisWeb.Api.Json.CommentView.render("show.json", %{comment: comment})
         )
 
         Comments.notify_comment(comment)
@@ -107,10 +107,10 @@ defmodule PhilomenaWeb.Image.CommentController do
   def update(conn, %{"comment" => comment_params}) do
     case Comments.update_comment(conn.assigns.comment, conn.assigns.current_user, comment_params) do
       {:ok, %{comment: comment}} ->
-        PhilomenaWeb.Endpoint.broadcast!(
+        IneedthisWeb.Endpoint.broadcast!(
           "firehose",
           "comment:update",
-          PhilomenaWeb.Api.Json.CommentView.render("show.json", %{comment: comment})
+          IneedthisWeb.Api.Json.CommentView.render("show.json", %{comment: comment})
         )
 
         Comments.reindex_comment(comment)
@@ -139,7 +139,7 @@ defmodule PhilomenaWeb.Image.CommentController do
 
     case Canada.Can.can?(conn.assigns.current_user, :show, image) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

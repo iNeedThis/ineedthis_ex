@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb do
+defmodule IneedthisWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PhilomenaWeb, :controller
-      use PhilomenaWeb, :view
+      use IneedthisWeb, :controller
+      use IneedthisWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,20 +19,20 @@ defmodule PhilomenaWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PhilomenaWeb
+      use Phoenix.Controller, namespace: IneedthisWeb
 
       import Plug.Conn
-      import PhilomenaWeb.Gettext
+      import IneedthisWeb.Gettext
       import Canary.Plugs
-      alias PhilomenaWeb.Router.Helpers, as: Routes
+      alias IneedthisWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/philomena_web/templates",
-        namespace: PhilomenaWeb
+        root: "lib/ineedthis_web/templates",
+        namespace: IneedthisWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
@@ -40,13 +40,13 @@ defmodule PhilomenaWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import PhilomenaWeb.ErrorHelpers
-      import PhilomenaWeb.Gettext
+      import IneedthisWeb.ErrorHelpers
+      import IneedthisWeb.Gettext
       import PhoenixMTM.Helpers
-      alias PhilomenaWeb.Router.Helpers, as: Routes
+      alias IneedthisWeb.Router.Helpers, as: Routes
 
       # Wrong way around for convenience
-      import PhilomenaWeb.AppView
+      import IneedthisWeb.AppView
 
       # Add LiveView
       import Phoenix.LiveView.Helpers
@@ -56,7 +56,7 @@ defmodule PhilomenaWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {PhilomenaWeb.LayoutView, "live.html"}
+        layout: {IneedthisWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -99,7 +99,7 @@ defmodule PhilomenaWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PhilomenaWeb.Gettext
+      import IneedthisWeb.Gettext
     end
   end
 

@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Registration.PasswordControllerTest do
-  use PhilomenaWeb.ConnCase, async: true
+defmodule IneedthisWeb.Registration.PasswordControllerTest do
+  use IneedthisWeb.ConnCase, async: true
 
-  alias Philomena.Users
-  import Philomena.UsersFixtures
+  alias Ineedthis.Users
+  import Ineedthis.UsersFixtures
 
   setup :register_and_log_in_user
 

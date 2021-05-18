@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.RenameUserLinksTable do
+defmodule Ineedthis.Repo.Migrations.RenameUserLinksTable do
   use Ecto.Migration
 
   def up do

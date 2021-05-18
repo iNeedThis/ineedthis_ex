@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.ActivityView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.ActivityView do
+  use IneedthisWeb, :view
 end

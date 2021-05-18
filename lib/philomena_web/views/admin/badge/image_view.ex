@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Admin.Badge.ImageView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Admin.Badge.ImageView do
+  use IneedthisWeb, :view
 end

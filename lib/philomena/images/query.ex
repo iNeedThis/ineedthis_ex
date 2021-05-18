@@ -1,6 +1,6 @@
-defmodule Philomena.Images.Query do
-  alias Philomena.Search.Parser
-  alias Philomena.Repo
+defmodule Ineedthis.Images.Query do
+  alias Ineedthis.Search.Parser
+  alias Ineedthis.Repo
 
   defp gallery_id_transform(_ctx, value) do
     case Integer.parse(value) do
@@ -60,7 +60,7 @@ defmodule Philomena.Images.Query do
     do: {:error, "Unknown `my' value."}
 
   defp invalid_filter_guard(ctx, search_string) do
-    case parse(user_fields(), ctx, Philomena.Search.String.normalize(search_string)) do
+    case parse(user_fields(), ctx, Ineedthis.Search.String.normalize(search_string)) do
       {:ok, query} -> query
       _error -> %{match_all: %{}}
     end

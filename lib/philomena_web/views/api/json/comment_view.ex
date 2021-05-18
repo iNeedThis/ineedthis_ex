@@ -1,16 +1,16 @@
-defmodule PhilomenaWeb.Api.Json.CommentView do
-  use PhilomenaWeb, :view
-  alias PhilomenaWeb.UserAttributionView
+defmodule IneedthisWeb.Api.Json.CommentView do
+  use IneedthisWeb, :view
+  alias IneedthisWeb.UserAttributionView
 
   def render("index.json", %{comments: comments, total: total} = assigns) do
     %{
-      comments: render_many(comments, PhilomenaWeb.Api.Json.CommentView, "comment.json", assigns),
+      comments: render_many(comments, IneedthisWeb.Api.Json.CommentView, "comment.json", assigns),
       total: total
     }
   end
 
   def render("show.json", %{comment: comment} = assigns) do
-    %{comment: render_one(comment, PhilomenaWeb.Api.Json.CommentView, "comment.json", assigns)}
+    %{comment: render_one(comment, IneedthisWeb.Api.Json.CommentView, "comment.json", assigns)}
   end
 
   def render("comment.json", %{comment: %{destroyed_content: true}}) do

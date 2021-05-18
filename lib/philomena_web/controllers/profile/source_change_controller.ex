@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Profile.SourceChangeController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Profile.SourceChangeController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users.User
-  alias Philomena.Images.Image
-  alias Philomena.SourceChanges.SourceChange
-  alias Philomena.Repo
+  alias Ineedthis.Users.User
+  alias Ineedthis.Images.Image
+  alias Ineedthis.SourceChanges.SourceChange
+  alias Ineedthis.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show
+  plug IneedthisWeb.CanaryMapPlug, index: :show
 
   plug :load_and_authorize_resource,
     model: User,

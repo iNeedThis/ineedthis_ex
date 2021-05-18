@@ -1,9 +1,9 @@
-defmodule Philomena.DnpEntries.DnpEntry do
+defmodule Ineedthis.DnpEntries.DnpEntry do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Users.User
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.Users.User
 
   schema "dnp_entries" do
     belongs_to :requesting_user, User

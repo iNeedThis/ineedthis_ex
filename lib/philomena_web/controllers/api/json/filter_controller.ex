@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Api.Json.FilterController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Api.Json.FilterController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Filters.Filter
-  alias Philomena.Repo
+  alias Ineedthis.Filters.Filter
+  alias Ineedthis.Repo
   import Ecto.Query
 
   def show(conn, %{"id" => id}) do

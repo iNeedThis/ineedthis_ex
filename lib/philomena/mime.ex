@@ -1,4 +1,4 @@
-defmodule Philomena.Mime do
+defmodule Ineedthis.Mime do
   @type mime :: String.t()
 
   @doc """

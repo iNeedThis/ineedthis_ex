@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Profile.FpHistoryView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Profile.FpHistoryView do
+  use IneedthisWeb, :view
 end

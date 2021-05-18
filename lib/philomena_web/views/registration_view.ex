@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.RegistrationView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.RegistrationView do
+  use IneedthisWeb, :view
 end

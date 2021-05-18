@@ -15,8 +15,8 @@ h1 Updating Moderation Scratchpad
         ' Preview
 
     .block__tab.communication-edit__tab.selected data-tab="write"
-      = render PhilomenaWeb.TextileView, "_help.html", conn: @conn
-      = render PhilomenaWeb.TextileView, "_toolbar.html", conn: @conn
+      = render IneedthisWeb.TextileView, "_help.html", conn: @conn
+      = render IneedthisWeb.TextileView, "_toolbar.html", conn: @conn
 
       .field
         = textarea f, :scratchpad, class: "input input--wide input--text js-preview-input js-toolbar-input", placeholder: "Scratchpad Contents"

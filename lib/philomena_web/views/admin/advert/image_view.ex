@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Admin.Advert.ImageView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Admin.Advert.ImageView do
+  use IneedthisWeb, :view
 end

@@ -55,8 +55,8 @@ p
           ' Preview
 
       .block__tab.communication-edit__tab.selected data-tab="write"
-        = render PhilomenaWeb.TextileView, "_help.html", conn: @conn
-        = render PhilomenaWeb.TextileView, "_toolbar.html", conn: @conn
+        = render IneedthisWeb.TextileView, "_help.html", conn: @conn
+        = render IneedthisWeb.TextileView, "_toolbar.html", conn: @conn
 
         .field
           = textarea f, :reason, class: "input input--wide input--text js-preview-input js-toolbar-input", placeholder: "Provide anything else we should know here."
@@ -64,6 +64,6 @@ p
       .block__tab.communication-edit__tab.hidden data-tab="preview"
         ' [Loading preview...]
 
-    = render PhilomenaWeb.CaptchaView, "_captcha.html", name: "report", conn: @conn
+    = render IneedthisWeb.CaptchaView, "_captcha.html", name: "report", conn: @conn
 
     = submit "Send Report", class: "button"

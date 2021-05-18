@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.TextileView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.TextileView do
+  use IneedthisWeb, :view
 end

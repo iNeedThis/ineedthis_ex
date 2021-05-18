@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.AddBanDurationConstraints do
+defmodule Ineedthis.Repo.Migrations.AddBanDurationConstraints do
   use Ecto.Migration
 
   def change do

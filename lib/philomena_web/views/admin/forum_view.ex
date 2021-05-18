@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Admin.ForumView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Admin.ForumView do
+  use IneedthisWeb, :view
 end

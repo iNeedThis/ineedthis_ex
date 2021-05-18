@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.AppView do
+defmodule IneedthisWeb.AppView do
   use Phoenix.HTML
 
   @time_strings %{

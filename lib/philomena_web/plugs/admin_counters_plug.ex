@@ -1,14 +1,14 @@
-defmodule PhilomenaWeb.AdminCountersPlug do
+defmodule IneedthisWeb.AdminCountersPlug do
   @moduledoc """
   This plug stores the counts used by the admin bar.
   ## Example
-      plug PhilomenaWeb.AdminCountersPlug
+      plug IneedthisWeb.AdminCountersPlug
   """
 
-  alias Philomena.DuplicateReports
-  alias Philomena.Reports
-  alias Philomena.ArtistLinks
-  alias Philomena.DnpEntries
+  alias Ineedthis.DuplicateReports
+  alias Ineedthis.Reports
+  alias Ineedthis.ArtistLinks
+  alias Ineedthis.DnpEntries
 
   import Plug.Conn, only: [assign: 3]
 

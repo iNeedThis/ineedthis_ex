@@ -1,16 +1,16 @@
-defmodule PhilomenaWeb.Image.Comment.HistoryController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.Comment.HistoryController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Versions.Version
-  alias Philomena.Versions
-  alias Philomena.Images.Image
-  alias Philomena.Repo
+  alias Ineedthis.Versions.Version
+  alias Ineedthis.Versions
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show
+  plug IneedthisWeb.CanaryMapPlug, index: :show
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
-  plug PhilomenaWeb.LoadCommentPlug
+  plug IneedthisWeb.LoadCommentPlug
 
   def index(conn, _params) do
     image = conn.assigns.image

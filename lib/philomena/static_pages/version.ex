@@ -1,9 +1,9 @@
-defmodule Philomena.StaticPages.Version do
+defmodule Ineedthis.StaticPages.Version do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.StaticPages.StaticPage
-  alias Philomena.Users.User
+  alias Ineedthis.StaticPages.StaticPage
+  alias Ineedthis.Users.User
 
   schema "static_page_versions" do
     belongs_to :static_page, StaticPage

@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.CommissionView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.CommissionView do
+  use IneedthisWeb, :view
 
-  alias Philomena.Commissions.Commission
+  alias Ineedthis.Commissions.Commission
 
   def categories, do: [[key: "-", value: ""] | Commission.categories()]
   def types, do: Commission.types()

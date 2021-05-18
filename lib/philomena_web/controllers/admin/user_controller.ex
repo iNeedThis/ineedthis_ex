@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Admin.UserController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.UserController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Roles.Role
-  alias Philomena.Users.User
-  alias Philomena.Users
-  alias Philomena.Repo
+  alias Ineedthis.Roles.Role
+  alias Ineedthis.Users.User
+  alias Ineedthis.Users
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -72,7 +72,7 @@ defmodule PhilomenaWeb.Admin.UserController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, User) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 

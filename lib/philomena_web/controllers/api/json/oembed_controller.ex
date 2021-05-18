@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Api.Json.OembedController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Api.Json.OembedController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Repo
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Repo
   import Ecto.Query
 
   @cdn_regex ~r/\/img\/.*\/(\d+)(\.|[\/_][_\w])/

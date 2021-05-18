@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.FingerprintProfileController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.FingerprintProfileController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.UserFingerprints.UserFingerprint
-  alias Philomena.Bans.Fingerprint
-  alias Philomena.Repo
+  alias Ineedthis.UserFingerprints.UserFingerprint
+  alias Ineedthis.Bans.Fingerprint
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :authorize_ip
@@ -32,7 +32,7 @@ defmodule PhilomenaWeb.FingerprintProfileController do
 
   defp authorize_ip(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :show, :ip_address) do
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
       true -> conn
     end
   end

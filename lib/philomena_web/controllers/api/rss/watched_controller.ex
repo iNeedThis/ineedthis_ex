@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Api.Rss.WatchedController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Api.Rss.WatchedController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.ImageLoader
-  alias Philomena.Images.Image
-  alias Philomena.Elasticsearch
+  alias IneedthisWeb.ImageLoader
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Elasticsearch
 
   import Ecto.Query
 

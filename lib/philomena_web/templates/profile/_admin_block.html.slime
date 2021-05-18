@@ -124,7 +124,7 @@ a.label.label--primary.label--block href="#" data-click-toggle=".js-admin__optio
           i.fas.fa-fw.fa-eraser
           span.admin__button Wipe PII
 
-    = if can?(@conn, :index, Philomena.Users.User) do
+    = if can?(@conn, :index, Ineedthis.Users.User) do
       li
         = link to: Routes.admin_user_vote_path(@conn, :delete, @user), data: [confirm: "Are you really, really sure?", method: "delete"] do
           i.far.fa-fw.fa-file-excel
@@ -135,25 +135,25 @@ a.label.label--primary.label--block href="#" data-click-toggle=".js-admin__optio
           i.fa.fa-fw.fa-arrow-down
           span.admin__button Remove All Downvotes
 
-      = if can?(@conn, :index, %Philomena.Donations.Donation{}) do
+      = if can?(@conn, :index, %Ineedthis.Donations.Donation{}) do
         li
           = link to: Routes.admin_donation_user_path(@conn, :show, @user) do
             i.fas.fa-fw.fa-dollar-sign
             span.admin__button Donations
 
-    = if can?(@conn, :edit, %Philomena.ArtistLinks.ArtistLink{}) do
+    = if can?(@conn, :edit, %Ineedthis.ArtistLinks.ArtistLink{}) do
       li
         = link to: Routes.profile_artist_link_path(@conn, :new, @user) do
           i.fa.fa-fw.fa-link
           span.admin__button Add Artist Link
 
-    = if can?(@conn, :create, Philomena.Bans.User) do
+    = if can?(@conn, :create, Ineedthis.Bans.User) do
       li
         = link to: Routes.admin_user_ban_path(@conn, :new, username: @user.name) do
           i.fa.fa-fw.fa-ban
           span.admin__button Ban this sucker
 
-    = if can?(@conn, :index, Philomena.Users.User) do
+    = if can?(@conn, :index, Ineedthis.Users.User) do
       li
         = link to: Routes.admin_user_api_key_path(@conn, :delete, @user), data: [confirm: "Are you really, really sure?", method: "delete"] do
           i.fas.fa-fw.fa-key

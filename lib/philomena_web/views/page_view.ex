@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.PageView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.PageView do
+  use IneedthisWeb, :view
 end

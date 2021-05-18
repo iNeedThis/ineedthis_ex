@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.Profile.Commission.ItemController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Profile.Commission.ItemController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Commissions.Item
-  alias Philomena.Commissions
-  alias Philomena.Users.User
-  alias Philomena.Repo
+  alias Ineedthis.Commissions.Item
+  alias Ineedthis.Commissions
+  alias Ineedthis.Users.User
+  alias Ineedthis.Repo
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
+  plug IneedthisWeb.FilterBannedUsersPlug
 
   plug :load_resource,
     model: User,
@@ -105,7 +105,7 @@ defmodule PhilomenaWeb.Profile.Commission.ItemController do
 
   defp ensure_commission(conn, _opts) do
     case is_nil(conn.assigns.user.commission) do
-      true -> PhilomenaWeb.NotFoundPlug.call(conn)
+      true -> IneedthisWeb.NotFoundPlug.call(conn)
       false -> conn
     end
   end
@@ -115,7 +115,7 @@ defmodule PhilomenaWeb.Profile.Commission.ItemController do
 
     case conn.assigns.current_user do
       %{id: ^user_id} -> conn
-      _other -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _other -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

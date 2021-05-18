@@ -1,11 +1,11 @@
-defmodule Philomena.Bans.User do
+defmodule Ineedthis.Bans.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
-  alias Philomena.Repo
-  alias Philomena.Schema.Time
-  alias Philomena.Schema.BanId
+  alias Ineedthis.Users.User
+  alias Ineedthis.Repo
+  alias Ineedthis.Schema.Time
+  alias Ineedthis.Schema.BanId
 
   schema "user_bans" do
     belongs_to :user, User

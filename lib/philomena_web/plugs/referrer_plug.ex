@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.ReferrerPlug do
+defmodule IneedthisWeb.ReferrerPlug do
   @moduledoc """
   This plug assigns the HTTP Referer, if it exists. Note the misspelling
   in the standard.
 
   ## Example
 
-      plug PhilomenaWeb.ReferrerPlug
+      plug IneedthisWeb.ReferrerPlug
   """
 
   alias Plug.Conn

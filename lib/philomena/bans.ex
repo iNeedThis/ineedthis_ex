@@ -1,13 +1,13 @@
-defmodule Philomena.Bans do
+defmodule Ineedthis.Bans do
   @moduledoc """
   The Bans context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.UserIps
-  alias Philomena.Bans.Fingerprint
+  alias Ineedthis.UserIps
+  alias Ineedthis.Bans.Fingerprint
 
   @doc """
   Returns the list of fingerprint_bans.
@@ -103,7 +103,7 @@ defmodule Philomena.Bans do
     Fingerprint.changeset(fingerprint, %{})
   end
 
-  alias Philomena.Bans.Subnet
+  alias Ineedthis.Bans.Subnet
 
   @doc """
   Returns the list of subnet_bans.
@@ -199,7 +199,7 @@ defmodule Philomena.Bans do
     Subnet.changeset(subnet, %{})
   end
 
-  alias Philomena.Bans.User
+  alias Ineedthis.Bans.User
 
   @doc """
   Returns the list of user_bans.

@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.FingerprintProfile.SourceChangeController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.FingerprintProfile.SourceChangeController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.SourceChanges.SourceChange
-  alias Philomena.Repo
+  alias Ineedthis.SourceChanges.SourceChange
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -25,7 +25,7 @@ defmodule PhilomenaWeb.FingerprintProfile.SourceChangeController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :show, :ip_address) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

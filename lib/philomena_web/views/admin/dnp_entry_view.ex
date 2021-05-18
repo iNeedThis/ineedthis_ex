@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Admin.DnpEntryView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Admin.DnpEntryView do
+  use IneedthisWeb, :view
 
-  alias PhilomenaWeb.DnpEntryView
+  alias IneedthisWeb.DnpEntryView
 
   defp pretty_state(dnp_entry),
     do: DnpEntryView.pretty_state(dnp_entry)

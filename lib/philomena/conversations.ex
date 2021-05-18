@@ -1,13 +1,13 @@
-defmodule Philomena.Conversations do
+defmodule Ineedthis.Conversations do
   @moduledoc """
   The Conversations context.
   """
 
   import Ecto.Query, warn: false
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.Conversations.Conversation
+  alias Ineedthis.Conversations.Conversation
 
   @doc """
   Gets a single conversation.
@@ -152,7 +152,7 @@ defmodule Philomena.Conversations do
 
   def mark_conversation_hidden(_conversation, _user, _read), do: {:ok, nil}
 
-  alias Philomena.Conversations.Message
+  alias Ineedthis.Conversations.Message
 
   @doc """
   Gets a single message.

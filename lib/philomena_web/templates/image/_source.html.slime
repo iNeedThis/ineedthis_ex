@@ -5,14 +5,14 @@
       = if @changeset.action do
         .alert.alert-danger
           p Oops, something went wrong! Please check the errors below.
-      
+
       .flex
         = url_input f, :source_url, id: "source-field", class: "input input--wide", autocomplete: "off", placeholder: "Source URL"
         = submit "Save source", class: "button button--separate-left"
         button.button.button--separate-left type="reset" data-click-hide="#source-form" data-click-show="#image-source"
           ' Cancel
 
-      = render PhilomenaWeb.CaptchaView, "_captcha.html", name: "source", conn: @conn
+      = render IneedthisWeb.CaptchaView, "_captcha.html", name: "source", conn: @conn
 
     - else
       p

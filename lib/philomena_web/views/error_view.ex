@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.ErrorView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.ErrorView do
+  use IneedthisWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

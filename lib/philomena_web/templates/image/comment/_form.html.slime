@@ -16,8 +16,8 @@
         ' Preview
 
     .block__tab.communication-edit__tab.selected data-tab="write"
-      = render PhilomenaWeb.TextileView, "_help.html", conn: @conn
-      = render PhilomenaWeb.TextileView, "_toolbar.html", conn: @conn
+      = render IneedthisWeb.TextileView, "_help.html", conn: @conn
+      = render IneedthisWeb.TextileView, "_toolbar.html", conn: @conn
 
       .field
         = textarea f, :body, class: "input input--wide input--text js-preview-input js-toolbar-input", placeholder: "Please read the site rules before posting and use [spoiler][/spoiler] for above-rating stuff.", required: true

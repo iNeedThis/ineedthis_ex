@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.DestroyController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.DestroyController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :destroy
+  plug IneedthisWeb.CanaryMapPlug, create: :destroy
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
   plug :verify_deleted when action in [:create]
 

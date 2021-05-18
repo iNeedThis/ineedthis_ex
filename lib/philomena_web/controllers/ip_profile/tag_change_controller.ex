@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.IpProfile.TagChangeController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.IpProfile.TagChangeController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.Repo
+  alias Ineedthis.TagChanges.TagChange
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -37,7 +37,7 @@ defmodule PhilomenaWeb.IpProfile.TagChangeController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :show, :ip_address) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

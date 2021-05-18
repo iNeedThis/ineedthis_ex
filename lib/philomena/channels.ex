@@ -1,15 +1,15 @@
-defmodule Philomena.Channels do
+defmodule Ineedthis.Channels do
   @moduledoc """
   The Channels context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.Channels.Channel
-  alias Philomena.Channels.PicartoChannel
-  alias Philomena.Channels.PiczelChannel
-  alias Philomena.Notifications
+  alias Ineedthis.Channels.Channel
+  alias Ineedthis.Channels.PicartoChannel
+  alias Ineedthis.Channels.PiczelChannel
+  alias Ineedthis.Notifications
 
   @doc """
   Updates all the tracked channels for which an update
@@ -132,7 +132,7 @@ defmodule Philomena.Channels do
     Channel.changeset(channel, %{})
   end
 
-  alias Philomena.Channels.Subscription
+  alias Ineedthis.Channels.Subscription
 
   @doc """
   Creates a subscription.

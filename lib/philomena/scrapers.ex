@@ -1,9 +1,9 @@
-defmodule Philomena.Scrapers do
+defmodule Ineedthis.Scrapers do
   @scrapers [
-    Philomena.Scrapers.Deviantart,
-    Philomena.Scrapers.Twitter,
-    Philomena.Scrapers.Tumblr,
-    Philomena.Scrapers.Raw
+    Ineedthis.Scrapers.Deviantart,
+    Ineedthis.Scrapers.Twitter,
+    Ineedthis.Scrapers.Tumblr,
+    Ineedthis.Scrapers.Raw
   ]
 
   def scrape!(url) do

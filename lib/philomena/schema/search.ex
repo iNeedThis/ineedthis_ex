@@ -1,6 +1,6 @@
-defmodule Philomena.Schema.Search do
-  alias Philomena.Images.Query
-  alias Philomena.Search.String
+defmodule Ineedthis.Schema.Search do
+  alias Ineedthis.Images.Query
+  alias Ineedthis.Search.String
   import Ecto.Changeset
 
   def validate_search(changeset, field, user, watched \\ false) do

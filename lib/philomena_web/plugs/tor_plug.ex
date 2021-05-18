@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.TorPlug do
+defmodule IneedthisWeb.TorPlug do
   @moduledoc """
   This plug ensures that a Tor user is authenticated.
 
   ## Example
 
-      plug PhilomenaWeb.TorPlug
+      plug IneedthisWeb.TorPlug
   """
-  alias PhilomenaWeb.Router.Helpers, as: Routes
+  alias IneedthisWeb.Router.Helpers, as: Routes
   alias Phoenix.Controller
   alias Plug.Conn
 

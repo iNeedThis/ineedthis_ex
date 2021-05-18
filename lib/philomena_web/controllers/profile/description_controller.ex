@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.Profile.DescriptionController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Profile.DescriptionController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users.User
-  alias Philomena.Users
+  alias Ineedthis.Users.User
+  alias Ineedthis.Users
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.CanaryMapPlug, edit: :edit_description, update: :edit_description
+  plug IneedthisWeb.FilterBannedUsersPlug
+  plug IneedthisWeb.CanaryMapPlug, edit: :edit_description, update: :edit_description
 
   plug :load_and_authorize_resource,
     model: User,

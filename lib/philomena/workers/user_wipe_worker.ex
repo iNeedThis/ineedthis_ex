@@ -1,5 +1,5 @@
-defmodule Philomena.UserWipeWorker do
-  alias Philomena.UserWipe
+defmodule Ineedthis.UserWipeWorker do
+  alias Ineedthis.UserWipe
 
   def perform(user_id) do
     UserWipe.perform(user_id)

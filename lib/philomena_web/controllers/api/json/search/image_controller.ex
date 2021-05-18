@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Api.Json.Search.ImageController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Api.Json.Search.ImageController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.ImageLoader
-  alias Philomena.Elasticsearch
-  alias Philomena.Interactions
-  alias Philomena.Images.Image
+  alias IneedthisWeb.ImageLoader
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.Interactions
+  alias Ineedthis.Images.Image
   import Ecto.Query
 
   def index(conn, params) do
@@ -17,7 +17,7 @@ defmodule PhilomenaWeb.Api.Json.Search.ImageController do
         interactions = Interactions.user_interactions(images, user)
 
         conn
-        |> put_view(PhilomenaWeb.Api.Json.ImageView)
+        |> put_view(IneedthisWeb.Api.Json.ImageView)
         |> render("index.json",
           images: images,
           total: images.total_entries,

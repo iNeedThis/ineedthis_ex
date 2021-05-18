@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.DuplicateReport.AcceptController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.DuplicateReport.AcceptController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.DuplicateReports.DuplicateReport
-  alias Philomena.DuplicateReports
+  alias Ineedthis.DuplicateReports.DuplicateReport
+  alias Ineedthis.DuplicateReports
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :edit, delete: :edit
+  plug IneedthisWeb.CanaryMapPlug, create: :edit, delete: :edit
 
   plug :load_and_authorize_resource,
     model: DuplicateReport,

@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Forum.ReadController do
+defmodule IneedthisWeb.Forum.ReadController do
   import Plug.Conn
-  use PhilomenaWeb, :controller
+  use IneedthisWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Forums
+  alias Ineedthis.Forums.Forum
+  alias Ineedthis.Forums
 
   plug :load_resource,
     model: Forum,

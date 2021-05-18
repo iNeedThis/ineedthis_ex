@@ -1,4 +1,4 @@
-defmodule Philomena.Images do
+defmodule Ineedthis.Images do
   @moduledoc """
   The Images context.
   """
@@ -6,35 +6,35 @@ defmodule Philomena.Images do
   import Ecto.Query, warn: false
 
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.Elasticsearch
-  alias Philomena.ThumbnailWorker
-  alias Philomena.ImagePurgeWorker
-  alias Philomena.DuplicateReports.DuplicateReport
-  alias Philomena.Images.Image
-  alias Philomena.Images.Hider
-  alias Philomena.Images.Uploader
-  alias Philomena.Images.Tagging
-  alias Philomena.Images.Thumbnailer
-  alias Philomena.Images.ElasticsearchIndex, as: ImageIndex
-  alias Philomena.IndexWorker
-  alias Philomena.ImageFeatures.ImageFeature
-  alias Philomena.SourceChanges.SourceChange
-  alias Philomena.Notifications.Notification
-  alias Philomena.NotificationWorker
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.Tags
-  alias Philomena.UserStatistics
-  alias Philomena.Tags.Tag
-  alias Philomena.Notifications
-  alias Philomena.Interactions
-  alias Philomena.Reports
-  alias Philomena.Reports.Report
-  alias Philomena.Comments
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Galleries.Interaction
-  alias Philomena.Users.User
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.ThumbnailWorker
+  alias Ineedthis.ImagePurgeWorker
+  alias Ineedthis.DuplicateReports.DuplicateReport
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images.Hider
+  alias Ineedthis.Images.Uploader
+  alias Ineedthis.Images.Tagging
+  alias Ineedthis.Images.Thumbnailer
+  alias Ineedthis.Images.ElasticsearchIndex, as: ImageIndex
+  alias Ineedthis.IndexWorker
+  alias Ineedthis.ImageFeatures.ImageFeature
+  alias Ineedthis.SourceChanges.SourceChange
+  alias Ineedthis.Notifications.Notification
+  alias Ineedthis.NotificationWorker
+  alias Ineedthis.TagChanges.TagChange
+  alias Ineedthis.Tags
+  alias Ineedthis.UserStatistics
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.Notifications
+  alias Ineedthis.Interactions
+  alias Ineedthis.Reports
+  alias Ineedthis.Reports.Report
+  alias Ineedthis.Comments
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.Galleries.Interaction
+  alias Ineedthis.Users.User
 
   @doc """
   Gets a single image.
@@ -719,7 +719,7 @@ defmodule Philomena.Images do
     Hider.purge_cache(files)
   end
 
-  alias Philomena.Images.Subscription
+  alias Ineedthis.Images.Subscription
 
   def subscribed?(_image, nil), do: false
 

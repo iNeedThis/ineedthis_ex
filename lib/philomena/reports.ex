@@ -1,16 +1,16 @@
-defmodule Philomena.Reports do
+defmodule Ineedthis.Reports do
   @moduledoc """
   The Reports context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Reports.Report
-  alias Philomena.Reports.ElasticsearchIndex, as: ReportIndex
-  alias Philomena.IndexWorker
-  alias Philomena.Polymorphic
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.Reports.Report
+  alias Ineedthis.Reports.ElasticsearchIndex, as: ReportIndex
+  alias Ineedthis.IndexWorker
+  alias Ineedthis.Polymorphic
 
   @doc """
   Returns the list of reports.

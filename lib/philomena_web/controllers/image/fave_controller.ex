@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Image.FaveController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.FaveController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.{Images, Images.Image}
-  alias Philomena.{ImageFaves, ImageVotes}
-  alias Philomena.Repo
+  alias Ineedthis.{Images, Images.Image}
+  alias Ineedthis.{ImageFaves, ImageVotes}
+  alias Ineedthis.Repo
   alias Ecto.Multi
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.CanaryMapPlug, create: :vote, delete: :vote
+  plug IneedthisWeb.FilterBannedUsersPlug
+  plug IneedthisWeb.CanaryMapPlug, create: :vote, delete: :vote
 
   plug :load_and_authorize_resource,
     model: Image,
@@ -15,7 +15,7 @@ defmodule PhilomenaWeb.Image.FaveController do
     persisted: true,
     preload: [tags: :aliases]
 
-  plug PhilomenaWeb.FilterForcedUsersPlug
+  plug IneedthisWeb.FilterForcedUsersPlug
 
   def create(conn, _params) do
     user = conn.assigns.current_user

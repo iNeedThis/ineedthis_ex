@@ -1,11 +1,11 @@
-defmodule Philomena.UsersFixtures do
+defmodule Ineedthis.UsersFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Philomena.Users` context.
+  entities via the `Ineedthis.Users` context.
   """
 
-  alias Philomena.Users
-  alias Philomena.Repo
+  alias Ineedthis.Users
+  alias Ineedthis.Repo
 
   def unique_user_email, do: "user#{System.unique_integer()}@example.com"
   def valid_user_password, do: "hello world!"

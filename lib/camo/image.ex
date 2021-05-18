@@ -27,14 +27,14 @@ defmodule Camo.Image do
   end
 
   defp cdn_host do
-    Application.get_env(:philomena, :cdn_host)
+    Application.get_env(:ineedthis, :cdn_host)
   end
 
   defp camo_key do
-    Application.get_env(:philomena, :camo_key)
+    Application.get_env(:ineedthis, :camo_key)
   end
 
   defp camo_host do
-    Application.get_env(:philomena, :camo_host)
+    Application.get_env(:ineedthis, :camo_host)
   end
 end

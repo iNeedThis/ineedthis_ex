@@ -1,19 +1,19 @@
-defmodule PhilomenaWeb.StatsUpdater do
-  alias Philomena.Config
-  alias Philomena.Elasticsearch
-  alias Philomena.Images.Image
-  alias Philomena.Comments.Comment
-  alias Philomena.Topics.Topic
-  alias Philomena.Forums.Forum
-  alias Philomena.Posts.Post
-  alias Philomena.Users.User
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Galleries.Interaction
-  alias Philomena.Commissions.Commission
-  alias Philomena.Commissions.Item
-  alias Philomena.Reports.Report
-  alias Philomena.StaticPages.StaticPage
-  alias Philomena.Repo
+defmodule IneedthisWeb.StatsUpdater do
+  alias Ineedthis.Config
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Comments.Comment
+  alias Ineedthis.Topics.Topic
+  alias Ineedthis.Forums.Forum
+  alias Ineedthis.Posts.Post
+  alias Ineedthis.Users.User
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.Galleries.Interaction
+  alias Ineedthis.Commissions.Commission
+  alias Ineedthis.Commissions.Item
+  alias Ineedthis.Reports.Report
+  alias Ineedthis.StaticPages.StaticPage
+  alias Ineedthis.Repo
   import Ecto.Query
 
   def update_stats! do
@@ -26,7 +26,7 @@ defmodule PhilomenaWeb.StatsUpdater do
 
     result =
       Phoenix.View.render(
-        PhilomenaWeb.StatView,
+        IneedthisWeb.StatView,
         "index.html",
         image_aggs: image_aggs,
         comment_aggs: comment_aggs,

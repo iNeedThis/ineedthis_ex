@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.PageController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.PageController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.StaticPages.StaticPage
-  alias Philomena.StaticPages
+  alias Ineedthis.StaticPages.StaticPage
+  alias Ineedthis.StaticPages
 
   plug :load_and_authorize_resource, model: StaticPage, id_field: "slug"
 

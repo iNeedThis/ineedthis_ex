@@ -1,4 +1,4 @@
-defmodule Philomena.Scrapers.Twitter do
+defmodule Ineedthis.Scrapers.Twitter do
   @gt_regex ~r|decodeURIComponent\("gt=(\d+);|
   @url_regex ~r|\Ahttps?://(?:mobile\.)?twitter.com/([A-Za-z\d_]+)/status/([\d]+)/?|
   @script_regex ~r|="(https://abs.twimg.com/responsive-web/client-web(?:-legacy)?/main\.[\da-z]+\.js)"|
@@ -46,11 +46,11 @@ defmodule Philomena.Scrapers.Twitter do
     url = "https://twitter.com/#{user}/status/#{status_id}"
 
     {gt, bearer} =
-      Philomena.Http.get(page_url)
+      Ineedthis.Http.get(page_url)
       |> extract_guest_token_and_bearer()
 
     {:ok, api_resp} =
-      Philomena.Http.get(api_url, [{"Authorization", "Bearer #{bearer}"}, {"x-guest-token", gt}])
+      Ineedthis.Http.get(api_url, [{"Authorization", "Bearer #{bearer}"}, {"x-guest-token", gt}])
 
     api_resp
     |> Map.get(:body)
@@ -66,7 +66,7 @@ defmodule Philomena.Scrapers.Twitter do
     [gt] = Regex.run(@gt_regex, page, capture: :all_but_first)
     [script | _] = Regex.run(@script_regex, page, capture: :all_but_first)
 
-    {:ok, %{body: body}} = Philomena.Http.get(script)
+    {:ok, %{body: body}} = Ineedthis.Http.get(script)
 
     [bearer] = Regex.run(@bearer_regex, body, capture: :all_but_first)
 

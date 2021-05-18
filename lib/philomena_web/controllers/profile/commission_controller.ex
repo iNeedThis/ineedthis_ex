@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.Profile.CommissionController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Profile.CommissionController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Commissions.Commission
-  alias Philomena.Commissions
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.Users.User
+  alias Ineedthis.Commissions.Commission
+  alias Ineedthis.Commissions
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.Users.User
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:new, :create, :edit, :update, :delete]
+  plug IneedthisWeb.FilterBannedUsersPlug when action in [:new, :create, :edit, :update, :delete]
 
   plug :load_resource,
     model: User,
@@ -123,14 +123,14 @@ defmodule PhilomenaWeb.Profile.CommissionController do
 
   defp ensure_commission(conn, _opts) do
     case is_nil(conn.assigns.user.commission) do
-      true -> PhilomenaWeb.NotFoundPlug.call(conn)
+      true -> IneedthisWeb.NotFoundPlug.call(conn)
       false -> conn
     end
   end
 
   defp ensure_no_commission(conn, _opts) do
     case is_nil(conn.assigns.user.commission) do
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
       true -> conn
     end
   end
@@ -141,7 +141,7 @@ defmodule PhilomenaWeb.Profile.CommissionController do
     case conn.assigns.current_user do
       %{id: ^user_id} -> conn
       %{role: role} when role in ["admin", "moderator"] -> conn
-      _other -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _other -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 

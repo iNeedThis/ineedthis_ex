@@ -1,8 +1,8 @@
-defmodule Philomena.ModNotes.ModNote do
+defmodule Ineedthis.ModNotes.ModNote do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
+  alias Ineedthis.Users.User
 
   schema "mod_notes" do
     belongs_to :moderator, User

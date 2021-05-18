@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.PaginationView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.PaginationView do
+  use IneedthisWeb, :view
 
   def first_page?(page) do
     page.page_number == 1

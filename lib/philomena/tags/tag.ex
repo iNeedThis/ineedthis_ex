@@ -1,14 +1,14 @@
-defmodule Philomena.Tags.Tag do
+defmodule Ineedthis.Tags.Tag do
   use Ecto.Schema
   import Ecto.Changeset
   import Ecto.Query
 
-  alias Philomena.Channels.Channel
-  alias Philomena.DnpEntries.DnpEntry
-  alias Philomena.ArtistLinks.ArtistLink
-  alias Philomena.Tags.Tag
-  alias Philomena.Slug
-  alias Philomena.Repo
+  alias Ineedthis.Channels.Channel
+  alias Ineedthis.DnpEntries.DnpEntry
+  alias Ineedthis.ArtistLinks.ArtistLink
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.Slug
+  alias Ineedthis.Repo
 
   @namespaces [
     "artist",

@@ -1,5 +1,5 @@
-defmodule Philomena.Processors.Svg do
-  alias Philomena.Intensities
+defmodule Ineedthis.Processors.Svg do
+  alias Ineedthis.Intensities
 
   def process(analysis, file, versions) do
     preview = preview(file)

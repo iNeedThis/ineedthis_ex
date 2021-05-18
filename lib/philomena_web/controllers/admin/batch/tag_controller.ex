@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Admin.Batch.TagController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.Batch.TagController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Images
-  alias Philomena.Repo
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.Images
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :verify_authorized
-  plug PhilomenaWeb.UserAttributionPlug
+  plug IneedthisWeb.UserAttributionPlug
 
   def update(conn, %{"tags" => tags, "image_ids" => image_ids}) do
     tags = Tag.parse_tag_list(tags)
@@ -56,7 +56,7 @@ defmodule PhilomenaWeb.Admin.Batch.TagController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :batch_update, Tag) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

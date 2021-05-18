@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Topic.SubscriptionView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Topic.SubscriptionView do
+  use IneedthisWeb, :view
 end

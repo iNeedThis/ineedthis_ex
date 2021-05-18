@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.CaptchaPlug do
-  alias PhilomenaWeb.ContentSecurityPolicyPlug
+defmodule IneedthisWeb.CaptchaPlug do
+  alias IneedthisWeb.ContentSecurityPolicyPlug
 
   @hcaptcha_url ["https://hcaptcha.com", "https://*.hcaptcha.com"]
 

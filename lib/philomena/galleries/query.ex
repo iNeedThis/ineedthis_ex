@@ -1,5 +1,5 @@
-defmodule Philomena.Galleries.Query do
-  alias Philomena.Search.Parser
+defmodule Ineedthis.Galleries.Query do
+  alias Ineedthis.Search.Parser
 
   defp fields do
     [

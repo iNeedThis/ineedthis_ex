@@ -1,12 +1,12 @@
-defmodule Philomena.IndexWorker do
+defmodule Ineedthis.IndexWorker do
   @modules %{
-    "Comments" => Philomena.Comments,
-    "Galleries" => Philomena.Galleries,
-    "Images" => Philomena.Images,
-    "Posts" => Philomena.Posts,
-    "Reports" => Philomena.Reports,
-    "Tags" => Philomena.Tags,
-    "Filters" => Philomena.Filters
+    "Comments" => Ineedthis.Comments,
+    "Galleries" => Ineedthis.Galleries,
+    "Images" => Ineedthis.Images,
+    "Posts" => Ineedthis.Posts,
+    "Reports" => Ineedthis.Reports,
+    "Tags" => Ineedthis.Tags,
+    "Filters" => Ineedthis.Filters
   }
 
   # Perform the queued index. Context function looks like the following:

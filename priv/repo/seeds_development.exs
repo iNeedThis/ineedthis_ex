@@ -5,17 +5,17 @@
 # Inside the script, you can read and write to any of your
 # repositories directly:
 #
-#     Philomena.Repo.insert!(%Philomena.SomeSchema{})
+#     Ineedthis.Repo.insert!(%Ineedthis.SomeSchema{})
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-alias Philomena.{Repo, Forums.Forum, Users, Users.User}
-alias Philomena.Comments
-alias Philomena.Images
-alias Philomena.Topics
-alias Philomena.Posts
-alias Philomena.Tags
+alias Ineedthis.{Repo, Forums.Forum, Users, Users.User}
+alias Ineedthis.Comments
+alias Ineedthis.Images
+alias Ineedthis.Topics
+alias Ineedthis.Posts
+alias Ineedthis.Tags
 
 {:ok, ip} = EctoNetwork.INET.cast({203, 0, 113, 0})
 {:ok, _} = Application.ensure_all_started(:plug)
@@ -52,7 +52,7 @@ for image_def <- resources["remote_images"] do
   now = DateTime.utc_now() |> DateTime.to_unix(:microsecond)
 
   IO.puts "Fetching #{image_def["url"]} ..."
-  {:ok, %{body: body}} = Philomena.Http.get(image_def["url"])
+  {:ok, %{body: body}} = Ineedthis.Http.get(image_def["url"])
 
   File.write!(file, body)
 

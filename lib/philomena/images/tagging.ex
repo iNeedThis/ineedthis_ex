@@ -1,9 +1,9 @@
-defmodule Philomena.Images.Tagging do
+defmodule Ineedthis.Images.Tagging do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Images.Image
-  alias Philomena.Tags.Tag
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Tags.Tag
 
   @primary_key false
 

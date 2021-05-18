@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.UserFingerprintUpdater do
-  alias Philomena.UserFingerprints.UserFingerprint
-  alias Philomena.Repo
+defmodule IneedthisWeb.UserFingerprintUpdater do
+  alias Ineedthis.UserFingerprints.UserFingerprint
+  alias Ineedthis.Repo
   import Ecto.Query
 
   def child_spec([]) do
     %{
-      id: PhilomenaWeb.UserFingerprintUpdater,
-      start: {PhilomenaWeb.UserFingerprintUpdater, :start_link, [[]]}
+      id: IneedthisWeb.UserFingerprintUpdater,
+      start: {IneedthisWeb.UserFingerprintUpdater, :start_link, [[]]}
     }
   end
 

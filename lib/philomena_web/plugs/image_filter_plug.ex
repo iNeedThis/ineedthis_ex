@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.ImageFilterPlug do
+defmodule IneedthisWeb.ImageFilterPlug do
   import Plug.Conn
-  import Philomena.Search.String
+  import Ineedthis.Search.String
 
-  alias Philomena.Images.Query
+  alias Ineedthis.Images.Query
 
   # No options
   def init([]), do: false

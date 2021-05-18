@@ -1,4 +1,4 @@
-defmodule Philomena.Scrapers.Tumblr do
+defmodule Ineedthis.Scrapers.Tumblr do
   @url_regex ~r|\Ahttps?://(?:.*)/(?:image\|post)/(\d+)(?:\z\|[/?#])|
   @media_regex ~r|https?://(?:\d+\.)?media\.tumblr\.com/[a-f\d]+/[a-f\d]+-[a-f\d]+/s\d+x\d+/[a-f\d]+\.(?:png\|jpe?g\|gif)|i
   @size_regex ~r|_(\d+)(\..+)\z|
@@ -26,7 +26,7 @@ defmodule Philomena.Scrapers.Tumblr do
         tumblr_api_key()
       }"
 
-    Philomena.Http.get(api_url)
+    Ineedthis.Http.get(api_url)
     |> json!()
     |> process_response!()
   end
@@ -70,7 +70,7 @@ defmodule Philomena.Scrapers.Tumblr do
   end
 
   defp url_ok?(url) do
-    match?({:ok, %Tesla.Env{status: 200}}, Philomena.Http.head(url))
+    match?({:ok, %Tesla.Env{status: 200}}, Ineedthis.Http.head(url))
   end
 
   defp add_meta(post, images) do
@@ -100,6 +100,6 @@ defmodule Philomena.Scrapers.Tumblr do
   end
 
   defp tumblr_api_key do
-    Application.get_env(:philomena, :tumblr_api_key)
+    Application.get_env(:ineedthis, :tumblr_api_key)
   end
 end

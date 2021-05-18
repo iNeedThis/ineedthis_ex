@@ -1,9 +1,9 @@
-defmodule Philomena.Users.Role do
+defmodule Ineedthis.Users.Role do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
-  alias Philomena.Roles.Role
+  alias Ineedthis.Users.User
+  alias Ineedthis.Roles.Role
 
   @primary_key false
 

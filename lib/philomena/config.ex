@@ -1,5 +1,5 @@
-defmodule Philomena.Config do
+defmodule Ineedthis.Config do
   def get(key) do
-    Application.get_env(:philomena, :config)[key]
+    Application.get_env(:ineedthis, :config)[key]
   end
 end

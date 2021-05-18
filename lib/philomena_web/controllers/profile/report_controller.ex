@@ -1,17 +1,17 @@
-defmodule PhilomenaWeb.Profile.ReportController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Profile.ReportController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.ReportController
-  alias PhilomenaWeb.ReportView
-  alias Philomena.Users.User
-  alias Philomena.Reports.Report
-  alias Philomena.Reports
+  alias IneedthisWeb.ReportController
+  alias IneedthisWeb.ReportView
+  alias Ineedthis.Users.User
+  alias Ineedthis.Reports.Report
+  alias Ineedthis.Reports
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.UserAttributionPlug
-  plug PhilomenaWeb.CaptchaPlug
-  plug PhilomenaWeb.CheckCaptchaPlug when action in [:create]
-  plug PhilomenaWeb.CanaryMapPlug, new: :show, create: :show
+  plug IneedthisWeb.FilterBannedUsersPlug
+  plug IneedthisWeb.UserAttributionPlug
+  plug IneedthisWeb.CaptchaPlug
+  plug IneedthisWeb.CheckCaptchaPlug when action in [:create]
+  plug IneedthisWeb.CanaryMapPlug, new: :show, create: :show
 
   plug :load_and_authorize_resource,
     model: User,

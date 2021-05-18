@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Admin.DnpEntry.TransitionController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.DnpEntry.TransitionController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.DnpEntries.DnpEntry
-  alias Philomena.DnpEntries
+  alias Ineedthis.DnpEntries.DnpEntry
+  alias Ineedthis.DnpEntries
 
   plug :verify_authorized
   plug :load_resource, model: DnpEntry, only: [:create], id_name: "dnp_entry_id", persisted: true
@@ -28,7 +28,7 @@ defmodule PhilomenaWeb.Admin.DnpEntry.TransitionController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, DnpEntry) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

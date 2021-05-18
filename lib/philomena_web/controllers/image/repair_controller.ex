@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.RepairController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.RepairController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :hide
+  plug IneedthisWeb.CanaryMapPlug, create: :hide
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def create(conn, _params) do

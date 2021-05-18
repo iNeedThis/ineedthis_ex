@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Tag.DetailController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Tag.DetailController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Filters.Filter
-  alias Philomena.Users.User
-  alias Philomena.Repo
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.Filters.Filter
+  alias Ineedthis.Users.User
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -43,7 +43,7 @@ defmodule PhilomenaWeb.Tag.DetailController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :edit, %Tag{}) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :philomena
+defmodule IneedthisWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :ineedthis
 
   @session_options [
     store: :cookie,
     extra: "SameSite=Lax",
-    key: "_philomena_key",
+    key: "_ineedthis_key",
     signing_salt: "signed cookie",
     encryption_salt: "authenticated encrypted cookie"
   ]
 
-  socket "/socket", PhilomenaWeb.UserSocket,
+  socket "/socket", IneedthisWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -25,7 +25,7 @@ defmodule PhilomenaWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :philomena,
+    from: :ineedthis,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -51,8 +51,8 @@ defmodule PhilomenaWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session, @session_options
 
-  plug PhilomenaWeb.RenderTimePlug
-  plug PhilomenaWeb.ReferrerPlug
-  plug PhilomenaWeb.LastIpPlug
-  plug PhilomenaWeb.Router
+  plug IneedthisWeb.RenderTimePlug
+  plug IneedthisWeb.ReferrerPlug
+  plug IneedthisWeb.LastIpPlug
+  plug IneedthisWeb.Router
 end

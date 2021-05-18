@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.NotificationController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.NotificationController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Notifications.{UnreadNotification, Notification}
-  alias Philomena.Polymorphic
-  alias Philomena.Repo
+  alias Ineedthis.Notifications.{UnreadNotification, Notification}
+  alias Ineedthis.Polymorphic
+  alias Ineedthis.Repo
   import Ecto.Query
 
   def index(conn, _params) do

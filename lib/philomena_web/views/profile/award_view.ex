@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Profile.AwardView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Profile.AwardView do
+  use IneedthisWeb, :view
 
   def badge_options(badges) do
     for badge <- badges do

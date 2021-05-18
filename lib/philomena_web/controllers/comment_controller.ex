@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.CommentController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.CommentController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.Elasticsearch
-  alias Philomena.{Comments.Query, Comments.Comment}
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.{Comments.Query, Comments.Comment}
   import Ecto.Query
 
   def index(conn, params) do

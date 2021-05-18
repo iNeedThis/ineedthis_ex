@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Conversation.HideController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Conversation.HideController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Conversations.Conversation
-  alias Philomena.Conversations
+  alias Ineedthis.Conversations.Conversation
+  alias Ineedthis.Conversations
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug IneedthisWeb.CanaryMapPlug, create: :show, delete: :show
 
   plug :load_and_authorize_resource,
     model: Conversation,

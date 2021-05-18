@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.Profile.IpHistoryController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Profile.IpHistoryController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.UserIps.UserIp
-  alias Philomena.Users.User
-  alias Philomena.Repo
+  alias Ineedthis.UserIps.UserIp
+  alias Ineedthis.Users.User
+  alias Ineedthis.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show_details
+  plug IneedthisWeb.CanaryMapPlug, index: :show_details
 
   plug :load_and_authorize_resource,
     model: User,

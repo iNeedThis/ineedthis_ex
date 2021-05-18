@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Filter.PublicController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Filter.PublicController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Filters
-  alias Philomena.Filters.Filter
+  alias Ineedthis.Filters
+  alias Ineedthis.Filters.Filter
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :edit
+  plug IneedthisWeb.CanaryMapPlug, create: :edit
   plug :load_and_authorize_resource, model: Filter, id_name: "filter_id", persisted: true
 
   def create(conn, _params) do

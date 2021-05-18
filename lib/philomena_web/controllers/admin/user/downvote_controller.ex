@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Admin.User.DownvoteController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.User.DownvoteController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.UserUnvoteWorker
-  alias Philomena.Users.User
+  alias Ineedthis.UserUnvoteWorker
+  alias Ineedthis.Users.User
 
   plug :verify_authorized
   plug :load_resource, model: User, id_name: "user_id", id_field: "slug", persisted: true
@@ -18,7 +18,7 @@ defmodule PhilomenaWeb.Admin.User.DownvoteController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, User) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

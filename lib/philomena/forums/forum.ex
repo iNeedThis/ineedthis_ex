@@ -1,10 +1,10 @@
-defmodule Philomena.Forums.Forum do
+defmodule Ineedthis.Forums.Forum do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Posts.Post
-  alias Philomena.Topics.Topic
-  alias Philomena.Forums.Subscription
+  alias Ineedthis.Posts.Post
+  alias Ineedthis.Topics.Topic
+  alias Ineedthis.Forums.Subscription
 
   @derive {Phoenix.Param, key: :short_name}
   schema "forums" do

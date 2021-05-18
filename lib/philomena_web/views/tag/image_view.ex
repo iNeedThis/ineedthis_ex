@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Tag.ImageView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Tag.ImageView do
+  use IneedthisWeb, :view
 
-  alias PhilomenaWeb.TagView
+  alias IneedthisWeb.TagView
 
   defp tag_image(tag),
     do: TagView.tag_image(tag)

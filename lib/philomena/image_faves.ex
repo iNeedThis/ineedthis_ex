@@ -1,4 +1,4 @@
-defmodule Philomena.ImageFaves do
+defmodule Ineedthis.ImageFaves do
   @moduledoc """
   The ImageFaves context.
   """
@@ -6,9 +6,9 @@ defmodule Philomena.ImageFaves do
   import Ecto.Query, warn: false
   alias Ecto.Multi
 
-  alias Philomena.ImageFaves.ImageFave
-  alias Philomena.UserStatistics
-  alias Philomena.Images.Image
+  alias Ineedthis.ImageFaves.ImageFave
+  alias Ineedthis.UserStatistics
+  alias Ineedthis.Images.Image
 
   @doc """
   Creates a image_hide.

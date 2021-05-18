@@ -1,22 +1,22 @@
-defmodule Philomena.Polymorphic do
-  alias Philomena.Repo
+defmodule Ineedthis.Polymorphic do
+  alias Ineedthis.Repo
   import Ecto.Query
 
   @classes %{
-    "Channel" => Philomena.Channels.Channel,
-    "Comment" => Philomena.Comments.Comment,
-    "Commission" => Philomena.Commissions.Commission,
-    "Conversation" => Philomena.Conversations.Conversation,
-    "DnpEntry" => Philomena.DnpEntries.DnpEntry,
-    "Filter" => Philomena.Filters.Filter,
-    "Forum" => Philomena.Forums.Forum,
-    "Gallery" => Philomena.Galleries.Gallery,
-    "Image" => Philomena.Images.Image,
-    "LivestreamChannel" => Philomena.Channels.Channel,
-    "Post" => Philomena.Posts.Post,
-    "Report" => Philomena.Reports.Report,
-    "Topic" => Philomena.Topics.Topic,
-    "User" => Philomena.Users.User
+    "Channel" => Ineedthis.Channels.Channel,
+    "Comment" => Ineedthis.Comments.Comment,
+    "Commission" => Ineedthis.Commissions.Commission,
+    "Conversation" => Ineedthis.Conversations.Conversation,
+    "DnpEntry" => Ineedthis.DnpEntries.DnpEntry,
+    "Filter" => Ineedthis.Filters.Filter,
+    "Forum" => Ineedthis.Forums.Forum,
+    "Gallery" => Ineedthis.Galleries.Gallery,
+    "Image" => Ineedthis.Images.Image,
+    "LivestreamChannel" => Ineedthis.Channels.Channel,
+    "Post" => Ineedthis.Posts.Post,
+    "Report" => Ineedthis.Reports.Report,
+    "Topic" => Ineedthis.Topics.Topic,
+    "User" => Ineedthis.Users.User
   }
 
   @preloads %{

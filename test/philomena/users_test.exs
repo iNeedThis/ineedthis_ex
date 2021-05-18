@@ -1,9 +1,9 @@
-defmodule Philomena.UsersTest do
-  use Philomena.DataCase
+defmodule Ineedthis.UsersTest do
+  use Ineedthis.DataCase
 
-  alias Philomena.Users
-  import Philomena.UsersFixtures
-  alias Philomena.Users.{User, UserToken}
+  alias Ineedthis.Users
+  import Ineedthis.UsersFixtures
+  alias Ineedthis.Users.{User, UserToken}
 
   describe "get_user_by_email/1" do
     test "does not return the user if the email does not exist" do

@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.Profile.DetailController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Profile.DetailController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.UserNameChanges.UserNameChange
-  alias Philomena.ModNotes.ModNote
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.Polymorphic
-  alias Philomena.Users.User
-  alias Philomena.Repo
+  alias Ineedthis.UserNameChanges.UserNameChange
+  alias Ineedthis.ModNotes.ModNote
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.Polymorphic
+  alias Ineedthis.Users.User
+  alias Ineedthis.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show_details
+  plug IneedthisWeb.CanaryMapPlug, index: :show_details
 
   plug :load_and_authorize_resource,
     model: User,

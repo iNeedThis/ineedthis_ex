@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Api.Json.Search.PostController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Api.Json.Search.PostController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Posts.Post
-  alias Philomena.Posts.Query
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.Posts.Post
+  alias Ineedthis.Posts.Query
   import Ecto.Query
 
   def index(conn, params) do
@@ -31,7 +31,7 @@ defmodule PhilomenaWeb.Api.Json.Search.PostController do
           |> Elasticsearch.search_records(preload(Post, [:user, :topic]))
 
         conn
-        |> put_view(PhilomenaWeb.Api.Json.Forum.Topic.PostView)
+        |> put_view(IneedthisWeb.Api.Json.Forum.Topic.PostView)
         |> render("index.json", posts: posts, total: posts.total_entries)
 
       {:error, msg} ->

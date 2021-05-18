@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Topic.Poll.VoteView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Topic.Poll.VoteView do
+  use IneedthisWeb, :view
 end

@@ -1,10 +1,10 @@
-defmodule Philomena.Conversations.Conversation do
+defmodule Ineedthis.Conversations.Conversation do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
-  alias Philomena.Conversations.Message
-  alias Philomena.Repo
+  alias Ineedthis.Users.User
+  alias Ineedthis.Conversations.Message
+  alias Ineedthis.Repo
 
   @derive {Phoenix.Param, key: :slug}
 

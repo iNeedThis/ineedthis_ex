@@ -1,14 +1,14 @@
-defmodule PhilomenaWeb.Image.TamperController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.TamperController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users.User
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Ineedthis.Users.User
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images
 
-  alias Philomena.ImageVotes
-  alias Philomena.Repo
+  alias Ineedthis.ImageVotes
+  alias Ineedthis.Repo
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :tamper
+  plug IneedthisWeb.CanaryMapPlug, create: :tamper
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
   plug :load_resource, model: User, id_name: "user_id", persisted: true
 

@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.UnlockControllerTest do
-  use PhilomenaWeb.ConnCase, async: true
+defmodule IneedthisWeb.UnlockControllerTest do
+  use IneedthisWeb.ConnCase, async: true
 
-  alias Philomena.Users
-  alias Philomena.Repo
-  import Philomena.UsersFixtures
+  alias Ineedthis.Users
+  alias Ineedthis.Repo
+  import Ineedthis.UsersFixtures
 
   setup do
     %{user: locked_user_fixture()}

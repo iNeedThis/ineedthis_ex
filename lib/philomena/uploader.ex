@@ -1,11 +1,11 @@
-defmodule Philomena.Uploader do
+defmodule Ineedthis.Uploader do
   @moduledoc """
   Upload and processing callback logic for image files.
   """
 
-  alias Philomena.Filename
-  alias Philomena.Analyzers
-  alias Philomena.Sha512
+  alias Ineedthis.Filename
+  alias Ineedthis.Analyzers
+  alias Ineedthis.Sha512
   import Ecto.Changeset
 
   @doc """

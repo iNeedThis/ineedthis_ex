@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Topic.Post.HideController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Topic.Post.HideController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Posts.Post
-  alias Philomena.Posts
+  alias Ineedthis.Posts.Post
+  alias Ineedthis.Posts
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :hide, delete: :hide
+  plug IneedthisWeb.CanaryMapPlug, create: :hide, delete: :hide
 
   plug :load_and_authorize_resource,
     model: Post,

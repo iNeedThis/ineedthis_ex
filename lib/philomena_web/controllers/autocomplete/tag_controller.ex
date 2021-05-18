@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Autocomplete.TagController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Autocomplete.TagController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Tags.Tag
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.Tags.Tag
   import Ecto.Query
 
   def show(conn, params) do

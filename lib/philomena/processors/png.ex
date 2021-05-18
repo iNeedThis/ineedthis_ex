@@ -1,5 +1,5 @@
-defmodule Philomena.Processors.Png do
-  alias Philomena.Intensities
+defmodule Ineedthis.Processors.Png do
+  alias Ineedthis.Intensities
 
   def process(analysis, file, versions) do
     dimensions = analysis.dimensions

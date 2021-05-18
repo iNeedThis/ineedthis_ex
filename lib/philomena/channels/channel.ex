@@ -1,9 +1,9 @@
-defmodule Philomena.Channels.Channel do
+defmodule Ineedthis.Channels.Channel do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Repo
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.Repo
 
   schema "channels" do
     belongs_to :associated_artist_tag, Tag

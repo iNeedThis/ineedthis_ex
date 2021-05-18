@@ -1,9 +1,9 @@
-defmodule Philomena.Conversations.Message do
+defmodule Ineedthis.Conversations.Message do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Conversations.Conversation
-  alias Philomena.Users.User
+  alias Ineedthis.Conversations.Conversation
+  alias Ineedthis.Users.User
 
   schema "messages" do
     belongs_to :conversation, Conversation

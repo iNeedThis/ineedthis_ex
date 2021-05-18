@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Admin.UserBanView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Admin.UserBanView do
+  use IneedthisWeb, :view
 
-  alias PhilomenaWeb.ProfileView
+  alias IneedthisWeb.ProfileView
 
   defp user_abbrv(conn, user),
     do: ProfileView.user_abbrv(conn, user)

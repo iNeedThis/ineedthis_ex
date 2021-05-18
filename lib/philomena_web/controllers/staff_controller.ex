@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.StaffController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.StaffController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users.User
-  alias Philomena.Repo
+  alias Ineedthis.Users.User
+  alias Ineedthis.Repo
   import Ecto.Query
 
   def index(conn, _params) do

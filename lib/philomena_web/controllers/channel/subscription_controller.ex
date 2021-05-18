@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Channel.SubscriptionController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Channel.SubscriptionController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Channels.Channel
-  alias Philomena.Channels
+  alias Ineedthis.Channels.Channel
+  alias Ineedthis.Channels
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug IneedthisWeb.CanaryMapPlug, create: :show, delete: :show
   plug :load_and_authorize_resource, model: Channel, id_name: "channel_id", persisted: true
 
   def create(conn, _params) do

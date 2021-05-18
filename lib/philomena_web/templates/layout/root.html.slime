@@ -21,7 +21,7 @@ html lang="en"
     link rel="icon" href="/favicon.ico" type="image/x-icon"
     link rel="icon" href="/favicon.svg" type="image/svg+xml"
 
-    meta name="generator" content="philomena"
+    meta name="generator" content="ineedthis"
     meta name="theme-color" content="#618fc3"
     meta name="format-detection" content="telephone=no"
 
@@ -29,7 +29,7 @@ html lang="en"
 
     script type="text/javascript" src=Routes.static_path(@conn, "/js/app.js") async="async"
 
-    = render PhilomenaWeb.LayoutView, "_opengraph.html", assigns
+    = render IneedthisWeb.LayoutView, "_opengraph.html", assigns
 
   body data-theme=theme_name(@current_user)
     = @inner_content

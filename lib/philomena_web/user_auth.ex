@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.UserAuth do
+defmodule IneedthisWeb.UserAuth do
   import Plug.Conn
   import Phoenix.Controller
 
-  alias Philomena.Users
-  alias PhilomenaWeb.Router.Helpers, as: Routes
-  alias PhilomenaWeb.UserIpUpdater
-  alias PhilomenaWeb.UserFingerprintUpdater
+  alias Ineedthis.Users
+  alias IneedthisWeb.Router.Helpers, as: Routes
+  alias IneedthisWeb.UserIpUpdater
+  alias IneedthisWeb.UserFingerprintUpdater
 
   # Make the remember me cookie valid for 365 days.
   # If you want bump or reduce this value, also change
@@ -103,7 +103,7 @@ defmodule PhilomenaWeb.UserAuth do
     totp_token && Users.delete_totp_token(totp_token)
 
     if live_socket_id = get_session(conn, :live_socket_id) do
-      PhilomenaWeb.Endpoint.broadcast(live_socket_id, "disconnect", %{})
+      IneedthisWeb.Endpoint.broadcast(live_socket_id, "disconnect", %{})
     end
 
     conn

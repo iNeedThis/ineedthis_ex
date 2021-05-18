@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Image.TagChangeView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Image.TagChangeView do
+  use IneedthisWeb, :view
 end

@@ -1,12 +1,12 @@
-defmodule Philomena.UserFingerprints do
+defmodule Ineedthis.UserFingerprints do
   @moduledoc """
   The UserFingerprints context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.UserFingerprints.UserFingerprint
+  alias Ineedthis.UserFingerprints.UserFingerprint
 
   @doc """
   Returns the list of user_fingerprints.

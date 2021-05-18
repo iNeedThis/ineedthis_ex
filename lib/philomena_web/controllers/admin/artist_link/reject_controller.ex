@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Admin.ArtistLink.RejectController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.ArtistLink.RejectController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.ArtistLinks.ArtistLink
-  alias Philomena.ArtistLinks
+  alias Ineedthis.ArtistLinks.ArtistLink
+  alias Ineedthis.ArtistLinks
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :edit
+  plug IneedthisWeb.CanaryMapPlug, create: :edit
 
   plug :load_and_authorize_resource,
     model: ArtistLink,

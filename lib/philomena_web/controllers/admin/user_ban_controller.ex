@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Admin.UserBanController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.UserBanController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Bans.User, as: UserBan
-  alias Philomena.Bans
-  alias Philomena.Repo
+  alias Ineedthis.Bans.User, as: UserBan
+  alias Ineedthis.Bans
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -102,14 +102,14 @@ defmodule PhilomenaWeb.Admin.UserBanController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, UserBan) do
       true -> conn
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 
   defp check_can_delete(conn, _opts) do
     case conn.assigns.current_user.role == "admin" do
       true -> conn
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

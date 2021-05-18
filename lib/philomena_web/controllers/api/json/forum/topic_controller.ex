@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Api.Json.Forum.TopicController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Api.Json.Forum.TopicController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Topics.Topic
-  alias Philomena.Repo
+  alias Ineedthis.Topics.Topic
+  alias Ineedthis.Repo
   import Ecto.Query
 
   def index(conn, %{"forum_id" => id}) do

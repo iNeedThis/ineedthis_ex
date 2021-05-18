@@ -1,12 +1,12 @@
-defmodule Philomena.Donations do
+defmodule Ineedthis.Donations do
   @moduledoc """
   The Donations context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.Donations.Donation
+  alias Ineedthis.Donations.Donation
 
   @doc """
   Returns the list of donations.

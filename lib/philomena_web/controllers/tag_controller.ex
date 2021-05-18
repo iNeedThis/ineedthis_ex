@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.TagController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.TagController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.ImageLoader
-  alias Philomena.Elasticsearch
-  alias Philomena.{Tags, Tags.Tag}
-  alias Philomena.{Images, Images.Image}
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.Interactions
+  alias IneedthisWeb.ImageLoader
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.{Tags, Tags.Tag}
+  alias Ineedthis.{Images, Images.Image}
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.Interactions
   import Ecto.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, update: :edit
+  plug IneedthisWeb.CanaryMapPlug, update: :edit
 
   plug :load_and_authorize_resource,
     model: Tag,

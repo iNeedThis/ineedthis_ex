@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.PostController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.PostController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.Elasticsearch
-  alias Philomena.{Posts.Query, Posts.Post}
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.{Posts.Query, Posts.Post}
   import Ecto.Query
 
   def index(conn, params) do

@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Filter.SpoilerController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Filter.SpoilerController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Filters
-  alias Philomena.Tags.Tag
+  alias Ineedthis.Filters
+  alias Ineedthis.Tags.Tag
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
+  plug IneedthisWeb.FilterBannedUsersPlug
   plug :authorize_filter
 
   plug :load_resource, model: Tag, id_field: "slug", id_name: "tag", persisted: true

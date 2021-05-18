@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Topic.PostView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Topic.PostView do
+  use IneedthisWeb, :view
 
   def anonymous_by_default?(conn) do
     conn.assigns.current_user.anonymous_by_default

@@ -1,4 +1,4 @@
-defmodule Philomena.Repo.Migrations.AddTagLocks do
+defmodule Ineedthis.Repo.Migrations.AddTagLocks do
   use Ecto.Migration
 
   def change do

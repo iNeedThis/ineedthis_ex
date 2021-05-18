@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Api.Json.Image.FeaturedController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Api.Json.Image.FeaturedController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.ImageFeatures.ImageFeature
-  alias Philomena.Images.Image
-  alias Philomena.Interactions
-  alias Philomena.Repo
+  alias Ineedthis.ImageFeatures.ImageFeature
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Interactions
+  alias Ineedthis.Repo
   import Ecto.Query
 
   def show(conn, _params) do
@@ -29,7 +29,7 @@ defmodule PhilomenaWeb.Api.Json.Image.FeaturedController do
         interactions = Interactions.user_interactions([featured_image], user)
 
         conn
-        |> put_view(PhilomenaWeb.Api.Json.ImageView)
+        |> put_view(IneedthisWeb.Api.Json.ImageView)
         |> render("show.json", image: featured_image, interactions: interactions)
     end
   end

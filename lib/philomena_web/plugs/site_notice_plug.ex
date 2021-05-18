@@ -1,14 +1,14 @@
-defmodule PhilomenaWeb.SiteNoticePlug do
+defmodule IneedthisWeb.SiteNoticePlug do
   @moduledoc """
   This plug stores the current site-wide notices.
 
   ## Example
 
-      plug PhilomenaWeb.SiteNoticePlug
+      plug IneedthisWeb.SiteNoticePlug
   """
 
   alias Plug.Conn
-  alias Philomena.SiteNotices
+  alias Ineedthis.SiteNotices
 
   @doc false
   @spec init(any()) :: any()

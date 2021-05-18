@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.ConfirmationController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.ConfirmationController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users
+  alias Ineedthis.Users
 
-  plug PhilomenaWeb.CaptchaPlug
-  plug PhilomenaWeb.CheckCaptchaPlug when action in [:create]
+  plug IneedthisWeb.CaptchaPlug
+  plug IneedthisWeb.CheckCaptchaPlug when action in [:create]
 
   def new(conn, _params) do
     render(conn, "new.html")

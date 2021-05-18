@@ -1,9 +1,9 @@
-defmodule Philomena.Channels.Subscription do
+defmodule Ineedthis.Channels.Subscription do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Channels.Channel
-  alias Philomena.Users.User
+  alias Ineedthis.Channels.Channel
+  alias Ineedthis.Users.User
 
   @primary_key false
 

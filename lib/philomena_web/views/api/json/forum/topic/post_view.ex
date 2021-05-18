@@ -1,23 +1,23 @@
-defmodule PhilomenaWeb.Api.Json.Forum.Topic.PostView do
-  use PhilomenaWeb, :view
-  alias PhilomenaWeb.UserAttributionView
+defmodule IneedthisWeb.Api.Json.Forum.Topic.PostView do
+  use IneedthisWeb, :view
+  alias IneedthisWeb.UserAttributionView
 
   def render("index.json", %{posts: posts, total: total} = assigns) do
     %{
-      posts: render_many(posts, PhilomenaWeb.Api.Json.Forum.Topic.PostView, "post.json", assigns),
+      posts: render_many(posts, IneedthisWeb.Api.Json.Forum.Topic.PostView, "post.json", assigns),
       total: total
     }
   end
 
   def render("show.json", %{post: post} = assigns) do
-    %{post: render_one(post, PhilomenaWeb.Api.Json.Forum.Topic.PostView, "post.json", assigns)}
+    %{post: render_one(post, IneedthisWeb.Api.Json.Forum.Topic.PostView, "post.json", assigns)}
   end
 
   def render("firehose.json", %{post: post, topic: topic, forum: forum} = assigns) do
     %{
-      post: render_one(post, PhilomenaWeb.Api.Json.Forum.Topic.PostView, "post.json", assigns),
-      topic: render_one(topic, PhilomenaWeb.Api.Json.Forum.TopicView, "topic.json", assigns),
-      forum: render_one(forum, PhilomenaWeb.Api.Json.ForumView, "forum.json", assigns)
+      post: render_one(post, IneedthisWeb.Api.Json.Forum.Topic.PostView, "post.json", assigns),
+      topic: render_one(topic, IneedthisWeb.Api.Json.Forum.TopicView, "topic.json", assigns),
+      forum: render_one(forum, IneedthisWeb.Api.Json.ForumView, "forum.json", assigns)
     }
   end
 

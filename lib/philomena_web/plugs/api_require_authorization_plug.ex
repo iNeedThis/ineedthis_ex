@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.ApiRequireAuthorizationPlug do
+defmodule IneedthisWeb.ApiRequireAuthorizationPlug do
   @moduledoc """
   This plug will force a 401 Unauthorized if no/invalid
   API key provided and a 403 Forbidden if user is banned.
 
   ## Example
 
-      plug PhilomenaWeb.ApiRequireAuthorizationPlug
+      plug IneedthisWeb.ApiRequireAuthorizationPlug
   """
   alias Phoenix.Controller
   alias Plug.Conn
-  alias Philomena.Bans
+  alias Ineedthis.Bans
 
   @doc false
   @spec init(any()) :: any()

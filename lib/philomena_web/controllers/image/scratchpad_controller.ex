@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.ScratchpadController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.ScratchpadController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images
 
-  plug PhilomenaWeb.CanaryMapPlug, edit: :hide, update: :hide
+  plug IneedthisWeb.CanaryMapPlug, edit: :hide, update: :hide
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def edit(conn, _params) do

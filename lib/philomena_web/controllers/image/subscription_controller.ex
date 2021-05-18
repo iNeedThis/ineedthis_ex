@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.SubscriptionController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.SubscriptionController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug IneedthisWeb.CanaryMapPlug, create: :show, delete: :show
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def create(conn, _params) do

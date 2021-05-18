@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.SessionController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.SessionController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users
-  alias PhilomenaWeb.UserAuth
+  alias Ineedthis.Users
+  alias IneedthisWeb.UserAuth
 
   def new(conn, _params) do
     render(conn, "new.html", error_message: nil)

@@ -1,23 +1,23 @@
-defmodule PhilomenaWeb.ProfileController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.ProfileController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.ImageLoader
-  alias Philomena.Elasticsearch
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.UserStatistics.UserStatistic
-  alias Philomena.Users.User
-  alias Philomena.Bans
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Posts.Post
-  alias Philomena.Comments.Comment
-  alias Philomena.Interactions
-  alias Philomena.Tags.Tag
-  alias Philomena.UserIps.UserIp
-  alias Philomena.UserFingerprints.UserFingerprint
-  alias Philomena.ModNotes.ModNote
-  alias Philomena.Polymorphic
-  alias Philomena.Images.Image
-  alias Philomena.Repo
+  alias IneedthisWeb.ImageLoader
+  alias Ineedthis.Elasticsearch
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.UserStatistics.UserStatistic
+  alias Ineedthis.Users.User
+  alias Ineedthis.Bans
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.Posts.Post
+  alias Ineedthis.Comments.Comment
+  alias Ineedthis.Interactions
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.UserIps.UserIp
+  alias Ineedthis.UserFingerprints.UserFingerprint
+  alias Ineedthis.ModNotes.ModNote
+  alias Ineedthis.Polymorphic
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :load_and_authorize_resource,

@@ -1,6 +1,6 @@
-defmodule PhilomenaWeb.AdvertPlug do
-  alias PhilomenaWeb.AdvertUpdater
-  alias Philomena.Adverts
+defmodule IneedthisWeb.AdvertPlug do
+  alias IneedthisWeb.AdvertUpdater
+  alias Ineedthis.Adverts
   alias Plug.Conn
 
   def init([]), do: []

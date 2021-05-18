@@ -1,10 +1,10 @@
-defmodule Philomena.Channels.PiczelChannel do
+defmodule Ineedthis.Channels.PiczelChannel do
   @api_online "https://api.piczel.tv/api/streams"
 
   @spec live_channels(DateTime.t()) :: map()
   def live_channels(now) do
     @api_online
-    |> Philomena.Http.get()
+    |> Ineedthis.Http.get()
     |> case do
       {:ok, %Tesla.Env{body: body, status: 200}} ->
         body

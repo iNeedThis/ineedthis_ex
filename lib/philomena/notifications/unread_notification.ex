@@ -1,9 +1,9 @@
-defmodule Philomena.Notifications.UnreadNotification do
+defmodule Ineedthis.Notifications.UnreadNotification do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
-  alias Philomena.Notifications.Notification
+  alias Ineedthis.Users.User
+  alias Ineedthis.Notifications.Notification
 
   @primary_key false
 

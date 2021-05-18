@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.Telemetry do
+defmodule IneedthisWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -31,11 +31,11 @@ defmodule PhilomenaWeb.Telemetry do
       ),
 
       # Database Time Metrics
-      summary("philomena.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("philomena.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("philomena.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("philomena.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("philomena.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("ineedthis.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("ineedthis.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("ineedthis.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("ineedthis.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("ineedthis.repo.query.idle_time", unit: {:native, :millisecond}),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),

@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Admin.DnpEntryController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.DnpEntryController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.DnpEntries.DnpEntry
-  alias Philomena.Repo
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.DnpEntries.DnpEntry
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -59,7 +59,7 @@ defmodule PhilomenaWeb.Admin.DnpEntryController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, DnpEntry) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 

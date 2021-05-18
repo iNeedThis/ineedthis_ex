@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.Comment.HideController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.Comment.HideController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Comments.Comment
-  alias Philomena.Comments
+  alias Ineedthis.Comments.Comment
+  alias Ineedthis.Comments
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :hide, delete: :hide
+  plug IneedthisWeb.CanaryMapPlug, create: :hide, delete: :hide
   plug :load_and_authorize_resource, model: Comment, id_name: "comment_id", persisted: true
 
   def create(conn, %{"comment" => comment_params}) do

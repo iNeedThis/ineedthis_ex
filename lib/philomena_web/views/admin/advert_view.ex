@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Admin.AdvertView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Admin.AdvertView do
+  use IneedthisWeb, :view
 
-  alias PhilomenaWeb.AdvertView
+  alias IneedthisWeb.AdvertView
 
   defp advert_image_url(advert),
     do: AdvertView.advert_image_url(advert)

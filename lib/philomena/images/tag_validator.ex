@@ -1,5 +1,5 @@
-defmodule Philomena.Images.TagValidator do
-  alias Philomena.Config
+defmodule Ineedthis.Images.TagValidator do
+  alias Ineedthis.Config
   import Ecto.Changeset
 
   def validate_tags(changeset) do

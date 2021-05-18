@@ -1,11 +1,11 @@
-defmodule Philomena.Interactions do
+defmodule Ineedthis.Interactions do
   import Ecto.Query
 
-  alias Philomena.ImageHides.ImageHide
-  alias Philomena.ImageFaves.ImageFave
-  alias Philomena.ImageVotes.ImageVote
-  alias Philomena.Images.Image
-  alias Philomena.Repo
+  alias Ineedthis.ImageHides.ImageHide
+  alias Ineedthis.ImageFaves.ImageFave
+  alias Ineedthis.ImageVotes.ImageVote
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Repo
   alias Ecto.Multi
 
   def user_interactions(_images, nil),

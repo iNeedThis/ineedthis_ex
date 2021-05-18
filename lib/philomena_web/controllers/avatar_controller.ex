@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.AvatarController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.AvatarController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users
+  alias Ineedthis.Users
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
+  plug IneedthisWeb.FilterBannedUsersPlug
 
-  plug PhilomenaWeb.ScraperPlug,
+  plug IneedthisWeb.ScraperPlug,
        [params_name: "user", params_key: "avatar"] when action in [:update]
 
   def edit(conn, _params) do

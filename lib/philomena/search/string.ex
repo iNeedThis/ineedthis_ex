@@ -1,4 +1,4 @@
-defmodule Philomena.Search.String do
+defmodule Ineedthis.Search.String do
   def normalize(nil) do
     ""
   end

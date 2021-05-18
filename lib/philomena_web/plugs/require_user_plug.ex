@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.RequireUserPlug do
+defmodule IneedthisWeb.RequireUserPlug do
   import Phoenix.Controller
   import Plug.Conn
 

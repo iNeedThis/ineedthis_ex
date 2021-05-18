@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Channel.ReadController do
+defmodule IneedthisWeb.Channel.ReadController do
   import Plug.Conn
-  use PhilomenaWeb, :controller
+  use IneedthisWeb, :controller
 
-  alias Philomena.Channels.Channel
-  alias Philomena.Channels
+  alias Ineedthis.Channels.Channel
+  alias Ineedthis.Channels
 
   plug :load_resource, model: Channel, id_name: "channel_id", persisted: true
 

@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Forum.SubscriptionController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Forum.SubscriptionController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Forums
+  alias Ineedthis.Forums.Forum
+  alias Ineedthis.Forums
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug IneedthisWeb.CanaryMapPlug, create: :show, delete: :show
 
   plug :load_and_authorize_resource,
     model: Forum,

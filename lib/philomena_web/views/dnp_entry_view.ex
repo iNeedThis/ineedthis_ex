@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.DnpEntryView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.DnpEntryView do
+  use IneedthisWeb, :view
 
   def reasons do
-    Philomena.DnpEntries.DnpEntry.reasons()
+    Ineedthis.DnpEntries.DnpEntry.reasons()
   end
 
   def form_class(changeset) do

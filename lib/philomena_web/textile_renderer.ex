@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.TextileRenderer do
-  alias Philomena.Textile.Parser
-  alias Philomena.Images.Image
-  alias Philomena.Repo
+defmodule IneedthisWeb.TextileRenderer do
+  alias Ineedthis.Textile.Parser
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Repo
   import Phoenix.HTML
   import Phoenix.HTML.Link
   import Ecto.Query
 
   # Kill bogus compile time dependency on ImageView
-  @image_view Module.concat(["PhilomenaWeb.ImageView"])
+  @image_view Module.concat(["IneedthisWeb.ImageView"])
 
   def render_one(post, conn) do
     hd(render_collection([post], conn))

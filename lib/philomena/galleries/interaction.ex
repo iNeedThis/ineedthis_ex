@@ -1,9 +1,9 @@
-defmodule Philomena.Galleries.Interaction do
+defmodule Ineedthis.Galleries.Interaction do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Images.Image
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.Images.Image
 
   # fixme: unique-key this off (gallery_id, image_id)
   schema "gallery_interactions" do

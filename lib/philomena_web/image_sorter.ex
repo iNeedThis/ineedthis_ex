@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.ImageSorter do
+defmodule IneedthisWeb.ImageSorter do
   @allowed_fields ~W(
     updated_at
     first_seen_at

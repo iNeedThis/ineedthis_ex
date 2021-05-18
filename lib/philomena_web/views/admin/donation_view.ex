@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Admin.DonationView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Admin.DonationView do
+  use IneedthisWeb, :view
 end

@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.Topic.HideController do
+defmodule IneedthisWeb.Topic.HideController do
   import Plug.Conn
-  use PhilomenaWeb, :controller
+  use IneedthisWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Topics.Topic
-  alias Philomena.Topics
+  alias Ineedthis.Forums.Forum
+  alias Ineedthis.Topics.Topic
+  alias Ineedthis.Topics
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug IneedthisWeb.CanaryMapPlug, create: :show, delete: :show
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -14,8 +14,8 @@ defmodule PhilomenaWeb.Topic.HideController do
     id_field: "short_name",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug
-  plug PhilomenaWeb.CanaryMapPlug, create: :hide, delete: :hide
+  plug IneedthisWeb.LoadTopicPlug
+  plug IneedthisWeb.CanaryMapPlug, create: :hide, delete: :hide
   plug :authorize_resource, model: Topic, persisted: true
 
   def create(conn, %{"topic" => topic_params}) do

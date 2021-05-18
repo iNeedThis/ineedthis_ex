@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.CommentView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.CommentView do
+  use IneedthisWeb, :view
 end

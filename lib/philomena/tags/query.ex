@@ -1,5 +1,5 @@
-defmodule Philomena.Tags.Query do
-  alias Philomena.Search.Parser
+defmodule Ineedthis.Tags.Query do
+  alias Ineedthis.Search.Parser
 
   defp fields do
     [

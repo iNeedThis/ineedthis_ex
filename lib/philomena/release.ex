@@ -1,5 +1,5 @@
-defmodule Philomena.Release do
-  @app :philomena
+defmodule Ineedthis.Release do
+  @app :ineedthis
 
   def migrate do
     load_app()
@@ -16,17 +16,17 @@ defmodule Philomena.Release do
 
   def update_channels do
     start_app()
-    Philomena.Channels.update_tracked_channels!()
+    Ineedthis.Channels.update_tracked_channels!()
   end
 
   def verify_artist_links do
     start_app()
-    Philomena.ArtistLinks.automatic_verify!()
+    Ineedthis.ArtistLinks.automatic_verify!()
   end
 
   def update_stats do
     start_app()
-    PhilomenaWeb.StatsUpdater.update_stats!()
+    IneedthisWeb.StatsUpdater.update_stats!()
   end
 
   defp repos do

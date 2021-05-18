@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Router do
-  use PhilomenaWeb, :router
+defmodule IneedthisWeb.Router do
+  use IneedthisWeb, :router
 
-  import PhilomenaWeb.UserAuth
+  import IneedthisWeb.UserAuth
   import Phoenix.LiveDashboard.Router
 
   pipeline :browser do
@@ -11,28 +11,28 @@ defmodule PhilomenaWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug :fetch_current_user
-    plug :put_root_layout, {PhilomenaWeb.LayoutView, :root}
-    plug PhilomenaWeb.ContentSecurityPolicyPlug
-    plug PhilomenaWeb.CurrentFilterPlug
-    plug PhilomenaWeb.ImageFilterPlug
-    plug PhilomenaWeb.PaginationPlug
-    plug PhilomenaWeb.EnsureUserEnabledPlug
-    plug PhilomenaWeb.CurrentBanPlug
-    plug PhilomenaWeb.NotificationCountPlug
-    plug PhilomenaWeb.SiteNoticePlug
-    plug PhilomenaWeb.ForumListPlug
-    plug PhilomenaWeb.FilterSelectPlug
-    plug PhilomenaWeb.ChannelPlug
-    plug PhilomenaWeb.AdminCountersPlug
+    plug :put_root_layout, {IneedthisWeb.LayoutView, :root}
+    plug IneedthisWeb.ContentSecurityPolicyPlug
+    plug IneedthisWeb.CurrentFilterPlug
+    plug IneedthisWeb.ImageFilterPlug
+    plug IneedthisWeb.PaginationPlug
+    plug IneedthisWeb.EnsureUserEnabledPlug
+    plug IneedthisWeb.CurrentBanPlug
+    plug IneedthisWeb.NotificationCountPlug
+    plug IneedthisWeb.SiteNoticePlug
+    plug IneedthisWeb.ForumListPlug
+    plug IneedthisWeb.FilterSelectPlug
+    plug IneedthisWeb.ChannelPlug
+    plug IneedthisWeb.AdminCountersPlug
   end
 
   pipeline :api do
-    plug PhilomenaWeb.ApiTokenPlug
-    plug PhilomenaWeb.EnsureUserEnabledPlug
-    plug PhilomenaWeb.CurrentFilterPlug
-    plug PhilomenaWeb.FilterIdPlug
-    plug PhilomenaWeb.ImageFilterPlug
-    plug PhilomenaWeb.PaginationPlug
+    plug IneedthisWeb.ApiTokenPlug
+    plug IneedthisWeb.EnsureUserEnabledPlug
+    plug IneedthisWeb.CurrentFilterPlug
+    plug IneedthisWeb.FilterIdPlug
+    plug IneedthisWeb.ImageFilterPlug
+    plug IneedthisWeb.PaginationPlug
   end
 
   pipeline :accepts_rss do
@@ -44,24 +44,24 @@ defmodule PhilomenaWeb.Router do
   end
 
   pipeline :ensure_totp do
-    plug PhilomenaWeb.TotpPlug
+    plug IneedthisWeb.TotpPlug
   end
 
   pipeline :ensure_tor_authorized do
-    plug PhilomenaWeb.TorPlug
+    plug IneedthisWeb.TorPlug
   end
 
   pipeline :ensure_not_banned do
-    plug PhilomenaWeb.FilterBannedUsersPlug
+    plug IneedthisWeb.FilterBannedUsersPlug
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", IneedthisWeb do
     pipe_through [:browser, :redirect_if_user_is_authenticated]
 
     resources "/sessions", SessionController, only: [:new, :create], singleton: true
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", IneedthisWeb do
     pipe_through [:browser, :require_authenticated_user]
 
     # Additional routes for TOTP
@@ -70,7 +70,7 @@ defmodule PhilomenaWeb.Router do
     end
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", IneedthisWeb do
     pipe_through [
       :browser,
       :ensure_not_banned,
@@ -84,7 +84,7 @@ defmodule PhilomenaWeb.Router do
     resources "/unlocks", UnlockController, only: [:new, :create, :show]
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", IneedthisWeb do
     pipe_through [
       :browser,
       :ensure_totp,
@@ -103,12 +103,12 @@ defmodule PhilomenaWeb.Router do
     end
   end
 
-  scope "/api/v1/rss", PhilomenaWeb.Api.Rss, as: :api_rss do
+  scope "/api/v1/rss", IneedthisWeb.Api.Rss, as: :api_rss do
     pipe_through [:accepts_rss, :api, :require_authenticated_user]
     resources "/watched", WatchedController, only: [:index]
   end
 
-  scope "/api/v1/json", PhilomenaWeb.Api.Json, as: :api_json do
+  scope "/api/v1/json", IneedthisWeb.Api.Json, as: :api_json do
     pipe_through [:accepts_json, :api, :ensure_tor_authorized]
 
     scope "/images", Image, as: :image do
@@ -150,7 +150,7 @@ defmodule PhilomenaWeb.Router do
     end
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", IneedthisWeb do
     pipe_through [:browser, :ensure_totp, :ensure_tor_authorized]
 
     # A curiosity due to the fact that Phoenix routes cannot have constraints
@@ -159,7 +159,7 @@ defmodule PhilomenaWeb.Router do
     end
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", IneedthisWeb do
     pipe_through [:browser, :ensure_totp, :require_authenticated_user]
 
     scope "/notifications", Notification, as: :notification do
@@ -321,7 +321,7 @@ defmodule PhilomenaWeb.Router do
     end
 
     scope "/admin", Admin, as: :admin do
-      live_dashboard "/dashboard", metrics: PhilomenaWeb.Telemetry, ecto_repos: [Philomena.Repo]
+      live_dashboard "/dashboard", metrics: IneedthisWeb.Telemetry, ecto_repos: [Ineedthis.Repo]
 
       resources "/reports", ReportController, only: [:index, :show] do
         resources "/claim", Report.ClaimController, only: [:create, :delete], singleton: true
@@ -421,7 +421,7 @@ defmodule PhilomenaWeb.Router do
     resources "/channels", ChannelController, only: [:new, :create, :edit, :update, :delete]
   end
 
-  scope "/", PhilomenaWeb do
+  scope "/", IneedthisWeb do
     pipe_through [:browser, :ensure_totp, :ensure_tor_authorized]
 
     get "/", ActivityController, :index
@@ -528,7 +528,7 @@ defmodule PhilomenaWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhilomenaWeb do
+  # scope "/api", IneedthisWeb do
   #   pipe_through :api
   # end
 end

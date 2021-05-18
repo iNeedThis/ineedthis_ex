@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.MapParameterPlug do
+defmodule IneedthisWeb.MapParameterPlug do
   # A bunch of crappy behaviors all interacting to create a
   # symphony of failure:
   #

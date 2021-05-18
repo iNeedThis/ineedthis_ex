@@ -1,9 +1,9 @@
-defmodule Philomena.PollOptions.PollOption do
+defmodule Ineedthis.PollOptions.PollOption do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.PollVotes.PollVote
-  alias Philomena.Polls.Poll
+  alias Ineedthis.PollVotes.PollVote
+  alias Ineedthis.Polls.Poll
 
   schema "poll_options" do
     belongs_to :poll, Poll

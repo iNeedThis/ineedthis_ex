@@ -1,9 +1,9 @@
-defmodule Philomena.ArtistLinks.ArtistLink do
+defmodule Ineedthis.ArtistLinks.ArtistLink do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
-  alias Philomena.Tags.Tag
+  alias Ineedthis.Users.User
+  alias Ineedthis.Tags.Tag
 
   schema "artist_links" do
     belongs_to :user, User

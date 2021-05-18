@@ -1,25 +1,25 @@
-defmodule Philomena.Images.Image do
+defmodule Ineedthis.Images.Image do
   use Ecto.Schema
 
   import Ecto.Changeset
   import Ecto.Query
 
-  alias Philomena.ImageIntensities.ImageIntensity
-  alias Philomena.ImageVotes.ImageVote
-  alias Philomena.ImageFaves.ImageFave
-  alias Philomena.ImageHides.ImageHide
-  alias Philomena.Images.Subscription
-  alias Philomena.Users.User
-  alias Philomena.Tags.Tag
-  alias Philomena.Galleries
-  alias Philomena.Comments.Comment
-  alias Philomena.SourceChanges.SourceChange
-  alias Philomena.TagChanges.TagChange
+  alias Ineedthis.ImageIntensities.ImageIntensity
+  alias Ineedthis.ImageVotes.ImageVote
+  alias Ineedthis.ImageFaves.ImageFave
+  alias Ineedthis.ImageHides.ImageHide
+  alias Ineedthis.Images.Subscription
+  alias Ineedthis.Users.User
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.Galleries
+  alias Ineedthis.Comments.Comment
+  alias Ineedthis.SourceChanges.SourceChange
+  alias Ineedthis.TagChanges.TagChange
 
-  alias Philomena.Images.TagDiffer
-  alias Philomena.Images.TagValidator
-  alias Philomena.Images.DnpValidator
-  alias Philomena.Repo
+  alias Ineedthis.Images.TagDiffer
+  alias Ineedthis.Images.TagValidator
+  alias Ineedthis.Images.DnpValidator
+  alias Ineedthis.Repo
 
   schema "images" do
     belongs_to :user, User

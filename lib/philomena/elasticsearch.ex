@@ -1,25 +1,25 @@
-defmodule Philomena.Elasticsearch do
-  alias Philomena.Batch
-  alias Philomena.Repo
+defmodule Ineedthis.Elasticsearch do
+  alias Ineedthis.Batch
+  alias Ineedthis.Repo
   require Logger
   import Ecto.Query
   import Elastix.HTTP
 
-  alias Philomena.Comments.Comment
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Images.Image
-  alias Philomena.Posts.Post
-  alias Philomena.Reports.Report
-  alias Philomena.Tags.Tag
-  alias Philomena.Filters.Filter
+  alias Ineedthis.Comments.Comment
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Posts.Post
+  alias Ineedthis.Reports.Report
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.Filters.Filter
 
-  alias Philomena.Comments.ElasticsearchIndex, as: CommentIndex
-  alias Philomena.Galleries.ElasticsearchIndex, as: GalleryIndex
-  alias Philomena.Images.ElasticsearchIndex, as: ImageIndex
-  alias Philomena.Posts.ElasticsearchIndex, as: PostIndex
-  alias Philomena.Reports.ElasticsearchIndex, as: ReportIndex
-  alias Philomena.Tags.ElasticsearchIndex, as: TagIndex
-  alias Philomena.Filters.ElasticsearchIndex, as: FilterIndex
+  alias Ineedthis.Comments.ElasticsearchIndex, as: CommentIndex
+  alias Ineedthis.Galleries.ElasticsearchIndex, as: GalleryIndex
+  alias Ineedthis.Images.ElasticsearchIndex, as: ImageIndex
+  alias Ineedthis.Posts.ElasticsearchIndex, as: PostIndex
+  alias Ineedthis.Reports.ElasticsearchIndex, as: ReportIndex
+  alias Ineedthis.Tags.ElasticsearchIndex, as: TagIndex
+  alias Ineedthis.Filters.ElasticsearchIndex, as: FilterIndex
 
   defp index_for(Comment), do: CommentIndex
   defp index_for(Gallery), do: GalleryIndex
@@ -30,7 +30,7 @@ defmodule Philomena.Elasticsearch do
   defp index_for(Filter), do: FilterIndex
 
   defp elastic_url do
-    Application.get_env(:philomena, :elasticsearch_url)
+    Application.get_env(:ineedthis, :elasticsearch_url)
   end
 
   def create_index!(module) do

@@ -30,14 +30,14 @@ services:
       - TAG_URL_ROOT=/media
       - ELASTICSEARCH_URL=http://elasticsearch:9200
       - REDIS_HOST=redis
-      - DATABASE_URL=ecto://postgres:postgres@postgres/philomena_dev
+      - DATABASE_URL=ecto://postgres:postgres@postgres/ineedthis_dev
       - CDN_HOST=localhost
-      - MAILER_ADDRESS=noreply@philomena.local
+      - MAILER_ADDRESS=noreply@ineedthis.local
       - START_ENDPOINT=true
-    working_dir: /srv/philomena
+    working_dir: /srv/ineedthis
     tty: true
     volumes:
-      - .:/srv/philomena
+      - .:/srv/ineedthis
     depends_on:
       - postgres
       - elasticsearch
@@ -75,7 +75,7 @@ services:
       context: .
       dockerfile: ./docker/web/Dockerfile
     volumes:
-      - .:/srv/philomena
+      - .:/srv/ineedthis
     logging:
       driver: "none"
     depends_on:

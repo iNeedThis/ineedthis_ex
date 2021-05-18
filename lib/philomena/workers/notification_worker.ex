@@ -1,10 +1,10 @@
-defmodule Philomena.NotificationWorker do
+defmodule Ineedthis.NotificationWorker do
   @modules %{
-    "Comments" => Philomena.Comments,
-    "Galleries" => Philomena.Galleries,
-    "Images" => Philomena.Images,
-    "Posts" => Philomena.Posts,
-    "Topics" => Philomena.Topics
+    "Comments" => Ineedthis.Comments,
+    "Galleries" => Ineedthis.Galleries,
+    "Images" => Ineedthis.Images,
+    "Posts" => Ineedthis.Posts,
+    "Topics" => Ineedthis.Topics
   }
 
   def perform(module, args) do

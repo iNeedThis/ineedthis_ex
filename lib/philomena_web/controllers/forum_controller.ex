@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.ForumController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.ForumController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.{Forums, Forums.Forum, Topics.Topic}
-  alias Philomena.Repo
+  alias Ineedthis.{Forums, Forums.Forum, Topics.Topic}
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :load_and_authorize_resource, model: Forum, id_field: "short_name"

@@ -1,14 +1,14 @@
-defmodule PhilomenaWeb.Image.NavigateController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.NavigateController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.ImageLoader
-  alias PhilomenaWeb.ImageNavigator
-  alias PhilomenaWeb.ImageScope
-  alias Philomena.Elasticsearch
-  alias Philomena.Images.Image
-  alias Philomena.Images.Query
+  alias IneedthisWeb.ImageLoader
+  alias IneedthisWeb.ImageNavigator
+  alias IneedthisWeb.ImageScope
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show
+  plug IneedthisWeb.CanaryMapPlug, index: :show
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def index(conn, %{"rel" => rel}) when rel in ~W(prev next) do

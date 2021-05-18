@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Api.Json.OembedView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Api.Json.OembedView do
+  use IneedthisWeb, :view
 
   def render("error.json", _assigns) do
     %{
@@ -15,7 +15,7 @@ defmodule PhilomenaWeb.Api.Json.OembedView do
       author_url: image.source_url || "",
       author_name: artist_tags(image.tags),
       provider_name: "Derpibooru",
-      provider_url: PhilomenaWeb.Endpoint.url(),
+      provider_url: IneedthisWeb.Endpoint.url(),
       cache_age: 7200,
       derpibooru_id: image.id,
       derpibooru_score: image.score,

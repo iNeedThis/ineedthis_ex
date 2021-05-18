@@ -1,12 +1,12 @@
-defmodule Philomena.DnpEntries do
+defmodule Ineedthis.DnpEntries do
   @moduledoc """
   The DnpEntries context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.DnpEntries.DnpEntry
+  alias Ineedthis.DnpEntries.DnpEntry
 
   @doc """
   Returns the list of dnp_entries.

@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Tag.DetailView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Tag.DetailView do
+  use IneedthisWeb, :view
 end

@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Api.Json.CommentController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Api.Json.CommentController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Comments.Comment
-  alias Philomena.Repo
+  alias Ineedthis.Comments.Comment
+  alias Ineedthis.Repo
   import Ecto.Query
 
   def show(conn, %{"id" => id}) do

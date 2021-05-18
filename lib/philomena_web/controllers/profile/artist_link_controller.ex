@@ -1,20 +1,20 @@
-defmodule PhilomenaWeb.Profile.ArtistLinkController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Profile.ArtistLinkController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.ArtistLinks.ArtistLink
-  alias Philomena.ArtistLinks
-  alias Philomena.Users.User
-  alias Philomena.Repo
+  alias Ineedthis.ArtistLinks.ArtistLink
+  alias Ineedthis.ArtistLinks
+  alias Ineedthis.Users.User
+  alias Ineedthis.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:new, :create]
+  plug IneedthisWeb.FilterBannedUsersPlug when action in [:new, :create]
 
   plug :load_and_authorize_resource,
     model: ArtistLink,
     only: [:show, :edit, :update],
     preload: [:user, :tag, :contacted_by_user]
 
-  plug PhilomenaWeb.CanaryMapPlug,
+  plug IneedthisWeb.CanaryMapPlug,
     index: :create_links,
     new: :create_links,
     create: :create_links,

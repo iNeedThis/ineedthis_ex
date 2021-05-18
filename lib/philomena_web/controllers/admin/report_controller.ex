@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Admin.ReportController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.ReportController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Elasticsearch
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.Reports.Report
-  alias Philomena.Reports.Query
-  alias Philomena.Polymorphic
-  alias Philomena.ModNotes.ModNote
-  alias Philomena.Repo
+  alias Ineedthis.Elasticsearch
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.Reports.Report
+  alias Ineedthis.Reports.Query
+  alias Ineedthis.Polymorphic
+  alias Ineedthis.ModNotes.ModNote
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -106,7 +106,7 @@ defmodule PhilomenaWeb.Admin.ReportController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, Report) do
       true -> conn
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 

@@ -1,10 +1,10 @@
-defmodule Philomena.Badges.Uploader do
+defmodule Ineedthis.Badges.Uploader do
   @moduledoc """
   Upload and processing callback logic for Badge images.
   """
 
-  alias Philomena.Badges.Badge
-  alias Philomena.Uploader
+  alias Ineedthis.Badges.Badge
+  alias Ineedthis.Uploader
 
   def analyze_upload(badge, params) do
     Uploader.analyze_upload(badge, "image", params["image"], &Badge.image_changeset/2)
@@ -19,6 +19,6 @@ defmodule Philomena.Badges.Uploader do
   end
 
   defp badge_file_root do
-    Application.get_env(:philomena, :badge_file_root)
+    Application.get_env(:ineedthis, :badge_file_root)
   end
 end

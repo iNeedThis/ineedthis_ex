@@ -15,23 +15,23 @@ h2 Search Results
 = cond do
   - Enum.any?(@posts) ->
     - route = fn p -> Routes.post_path(@conn, :index, p) end
-    - pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @posts, route: route, params: [pq: @conn.params["pq"]], conn: @conn
+    - pagination = render IneedthisWeb.PaginationView, "_pagination.html", page: @posts, route: route, params: [pq: @conn.params["pq"]], conn: @conn
 
     = for {body, post} <- @posts, post.topic.hidden_from_users == false do
-      = render PhilomenaWeb.PostView, "_post.html", body: body, post: post, conn: @conn
+      = render IneedthisWeb.PostView, "_post.html", body: body, post: post, conn: @conn
 
     .block
       .block__header.block__header--light.page__header
         .page__pagination = pagination
         .page__info
           span.block__header__title
-            = render PhilomenaWeb.PaginationView, "_pagination_info.html", page: @posts, conn: @conn
+            = render IneedthisWeb.PaginationView, "_pagination_info.html", page: @posts, conn: @conn
 
   - assigns[:error] ->
     p
       ' Oops, there was an error evaluating your query:
     pre = assigns[:error]
-  
+
   - true ->
     p
       ' No posts found!

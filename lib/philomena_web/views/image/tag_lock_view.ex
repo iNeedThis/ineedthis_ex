@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Image.TagLockView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Image.TagLockView do
+  use IneedthisWeb, :view
 end

@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Image.FavoriteController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.FavoriteController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Repo
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Repo
 
   plug :load_and_authorize_resource,
     model: Image,

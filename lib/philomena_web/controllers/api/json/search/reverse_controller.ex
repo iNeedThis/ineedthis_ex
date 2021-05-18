@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.Api.Json.Search.ReverseController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Api.Json.Search.ReverseController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.ImageReverse
-  alias Philomena.Interactions
+  alias IneedthisWeb.ImageReverse
+  alias Ineedthis.Interactions
 
-  plug PhilomenaWeb.ScraperCachePlug
-  plug PhilomenaWeb.ScraperPlug, params_key: "image", params_name: "image"
+  plug IneedthisWeb.ScraperCachePlug
+  plug IneedthisWeb.ScraperPlug, params_key: "image", params_name: "image"
 
   def create(conn, %{"image" => image_params}) do
     user = conn.assigns.current_user
@@ -18,7 +18,7 @@ defmodule PhilomenaWeb.Api.Json.Search.ReverseController do
     interactions = Interactions.user_interactions(images, user)
 
     conn
-    |> put_view(PhilomenaWeb.Api.Json.ImageView)
+    |> put_view(IneedthisWeb.Api.Json.ImageView)
     |> render("index.json", images: images, total: length(images), interactions: interactions)
   end
 end

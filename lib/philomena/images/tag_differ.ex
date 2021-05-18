@@ -1,9 +1,9 @@
-defmodule Philomena.Images.TagDiffer do
+defmodule Ineedthis.Images.TagDiffer do
   import Ecto.Changeset
   import Ecto.Query
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Repo
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.Repo
 
   def diff_input(changeset, old_tags, new_tags, excluded_tags) do
     excluded_ids = Enum.map(excluded_tags, & &1.id)

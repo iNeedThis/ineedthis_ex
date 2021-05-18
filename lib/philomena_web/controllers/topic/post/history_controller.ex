@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Topic.Post.HistoryController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Topic.Post.HistoryController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Versions.Version
-  alias Philomena.Versions
-  alias Philomena.Forums.Forum
-  alias Philomena.Repo
+  alias Ineedthis.Versions.Version
+  alias Ineedthis.Versions
+  alias Ineedthis.Forums.Forum
+  alias Ineedthis.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show
+  plug IneedthisWeb.CanaryMapPlug, index: :show
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -15,8 +15,8 @@ defmodule PhilomenaWeb.Topic.Post.HistoryController do
     id_field: "short_name",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug
-  plug PhilomenaWeb.LoadPostPlug
+  plug IneedthisWeb.LoadTopicPlug
+  plug IneedthisWeb.LoadPostPlug
 
   def index(conn, _params) do
     topic = conn.assigns.topic

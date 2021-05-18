@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Search.ReverseController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Search.ReverseController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.ImageReverse
+  alias IneedthisWeb.ImageReverse
 
-  plug PhilomenaWeb.ScraperCachePlug
-  plug PhilomenaWeb.ScraperPlug, params_key: "image", params_name: "image"
+  plug IneedthisWeb.ScraperCachePlug
+  plug IneedthisWeb.ScraperPlug, params_key: "image", params_name: "image"
 
   def index(conn, params) do
     create(conn, params)

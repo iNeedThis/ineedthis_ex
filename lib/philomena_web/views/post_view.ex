@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.PostView do
-  alias Philomena.Attribution
-  alias Philomena.Textile.Parser
+defmodule IneedthisWeb.PostView do
+  alias Ineedthis.Attribution
+  alias Ineedthis.Textile.Parser
 
-  use PhilomenaWeb, :view
+  use IneedthisWeb, :view
 
   def textile_safe_author(object) do
     author_name = author_name(object)
@@ -27,7 +27,7 @@ defmodule PhilomenaWeb.PostView do
   defp author_name(object) do
     cond do
       Attribution.anonymous?(object) || !object.user ->
-        PhilomenaWeb.UserAttributionView.anonymous_name(object)
+        IneedthisWeb.UserAttributionView.anonymous_name(object)
 
       true ->
         object.user.name

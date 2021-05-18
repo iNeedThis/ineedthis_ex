@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Profile.TagChangeController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Profile.TagChangeController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users.User
-  alias Philomena.Images.Image
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.Repo
+  alias Ineedthis.Users.User
+  alias Ineedthis.Images.Image
+  alias Ineedthis.TagChanges.TagChange
+  alias Ineedthis.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show
+  plug IneedthisWeb.CanaryMapPlug, index: :show
   plug :load_resource, model: User, id_name: "profile_id", id_field: "slug", persisted: true
 
   def index(conn, params) do

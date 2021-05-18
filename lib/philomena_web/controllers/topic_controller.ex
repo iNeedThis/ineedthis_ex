@@ -1,23 +1,23 @@
-defmodule PhilomenaWeb.TopicController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.TopicController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.NotificationCountPlug
-  alias Philomena.{Forums.Forum, Topics.Topic, Posts.Post, Polls.Poll, PollOptions.PollOption}
-  alias Philomena.{Forums, Topics, Polls, Posts}
-  alias Philomena.PollVotes
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.Repo
+  alias IneedthisWeb.NotificationCountPlug
+  alias Ineedthis.{Forums.Forum, Topics.Topic, Posts.Post, Polls.Poll, PollOptions.PollOption}
+  alias Ineedthis.{Forums, Topics, Polls, Posts}
+  alias Ineedthis.PollVotes
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.LimitPlug,
+  plug IneedthisWeb.LimitPlug,
        [time: 300, error: "You may only make a new topic once every 5 minutes."]
        when action in [:create]
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:new, :create]
-  plug PhilomenaWeb.UserAttributionPlug when action in [:new, :create]
-  plug PhilomenaWeb.AdvertPlug when action in [:show]
+  plug IneedthisWeb.FilterBannedUsersPlug when action in [:new, :create]
+  plug IneedthisWeb.UserAttributionPlug when action in [:new, :create]
+  plug IneedthisWeb.AdvertPlug when action in [:show]
 
-  plug PhilomenaWeb.CanaryMapPlug, new: :show, create: :show, update: :show
+  plug IneedthisWeb.CanaryMapPlug, new: :show, create: :show, update: :show
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -25,7 +25,7 @@ defmodule PhilomenaWeb.TopicController do
     id_field: "short_name",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug, [param: "id"] when action in [:show, :update]
+  plug IneedthisWeb.LoadTopicPlug, [param: "id"] when action in [:show, :update]
   plug :verify_authorized when action in [:update]
 
   def show(conn, params) do
@@ -115,10 +115,10 @@ defmodule PhilomenaWeb.TopicController do
         Topics.notify_topic(topic, post)
 
         if forum.access_level == "normal" do
-          PhilomenaWeb.Endpoint.broadcast!(
+          IneedthisWeb.Endpoint.broadcast!(
             "firehose",
             "post:create",
-            PhilomenaWeb.Api.Json.Forum.Topic.PostView.render("firehose.json", %{
+            IneedthisWeb.Api.Json.Forum.Topic.PostView.render("firehose.json", %{
               post: post,
               topic: topic,
               forum: forum
@@ -160,7 +160,7 @@ defmodule PhilomenaWeb.TopicController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :edit, conn.assigns.topic) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

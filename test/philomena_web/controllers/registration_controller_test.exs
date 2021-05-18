@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.RegistrationControllerTest do
-  use PhilomenaWeb.ConnCase, async: true
+defmodule IneedthisWeb.RegistrationControllerTest do
+  use IneedthisWeb.ConnCase, async: true
 
-  import Philomena.UsersFixtures
+  import Ineedthis.UsersFixtures
 
   describe "GET /registrations/new" do
     test "renders registration page", %{conn: conn} do

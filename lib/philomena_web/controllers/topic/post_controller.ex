@@ -1,18 +1,18 @@
-defmodule PhilomenaWeb.Topic.PostController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Topic.PostController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.{Forums.Forum, Topics.Topic, Posts.Post}
-  alias Philomena.Posts
-  alias Philomena.UserStatistics
+  alias Ineedthis.{Forums.Forum, Topics.Topic, Posts.Post}
+  alias Ineedthis.Posts
+  alias Ineedthis.UserStatistics
 
-  plug PhilomenaWeb.LimitPlug,
+  plug IneedthisWeb.LimitPlug,
        [time: 30, error: "You may only make a post once every 30 seconds."]
        when action in [:create]
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.UserAttributionPlug
+  plug IneedthisWeb.FilterBannedUsersPlug
+  plug IneedthisWeb.UserAttributionPlug
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, edit: :show, update: :show
+  plug IneedthisWeb.CanaryMapPlug, create: :show, edit: :show, update: :show
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -20,12 +20,12 @@ defmodule PhilomenaWeb.Topic.PostController do
     id_name: "forum_id",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug
-  plug PhilomenaWeb.CanaryMapPlug, create: :create_post, edit: :create_post, update: :create_post
+  plug IneedthisWeb.LoadTopicPlug
+  plug IneedthisWeb.CanaryMapPlug, create: :create_post, edit: :create_post, update: :create_post
   plug :authorize_resource, model: Topic, persisted: true
 
-  plug PhilomenaWeb.LoadPostPlug, [param: "id"] when action in [:edit, :update]
-  plug PhilomenaWeb.CanaryMapPlug, edit: :edit, update: :edit
+  plug IneedthisWeb.LoadPostPlug, [param: "id"] when action in [:edit, :update]
+  plug IneedthisWeb.CanaryMapPlug, edit: :edit, update: :edit
   plug :authorize_resource, model: Post, only: [:edit, :update]
 
   def create(conn, %{"post" => post_params}) do
@@ -39,10 +39,10 @@ defmodule PhilomenaWeb.Topic.PostController do
         UserStatistics.inc_stat(conn.assigns.current_user, :forum_posts)
 
         if forum.access_level == "normal" do
-          PhilomenaWeb.Endpoint.broadcast!(
+          IneedthisWeb.Endpoint.broadcast!(
             "firehose",
             "post:create",
-            PhilomenaWeb.Api.Json.Forum.Topic.PostView.render("firehose.json", %{
+            IneedthisWeb.Api.Json.Forum.Topic.PostView.render("firehose.json", %{
               post: post,
               topic: topic,
               forum: forum

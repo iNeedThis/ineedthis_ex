@@ -1,4 +1,4 @@
-defmodule Philomena.Processors do
+defmodule Ineedthis.Processors do
   @moduledoc """
   Utilities for processing uploads.
 
@@ -7,24 +7,24 @@ defmodule Philomena.Processors do
   - process/3:
     Takes an analysis, file path, and version list and generates an
     "edit script" that represents how to store this file according to the
-    given version list. See Philomena.Images.Thumbnailer for more
+    given version list. See Ineedthis.Images.Thumbnailer for more
     information on how this works.
 
   - post_process/2:
     Takes an analysis and file path and performs optimizations on the
-    upload. See Philomena.Images.Thumbnailer for more information on how this
+    upload. See Ineedthis.Images.Thumbnailer for more information on how this
     works.
 
   - intensities/2:
     Takes an analysis and file path and generates an intensities map
-    appropriate for use by Philomena.DuplicateReports.
+    appropriate for use by Ineedthis.DuplicateReports.
   """
 
-  alias Philomena.Processors.Gif
-  alias Philomena.Processors.Jpeg
-  alias Philomena.Processors.Png
-  alias Philomena.Processors.Svg
-  alias Philomena.Processors.Webm
+  alias Ineedthis.Processors.Gif
+  alias Ineedthis.Processors.Jpeg
+  alias Ineedthis.Processors.Png
+  alias Ineedthis.Processors.Svg
+  alias Ineedthis.Processors.Webm
 
   @doc """
   Returns a processor, with the processor being a module capable

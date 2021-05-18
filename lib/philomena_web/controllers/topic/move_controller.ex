@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Topic.MoveController do
+defmodule IneedthisWeb.Topic.MoveController do
   import Plug.Conn
-  use PhilomenaWeb, :controller
+  use IneedthisWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Topics.Topic
-  alias Philomena.Topics
-  alias Philomena.Repo
+  alias Ineedthis.Forums.Forum
+  alias Ineedthis.Topics.Topic
+  alias Ineedthis.Topics
+  alias Ineedthis.Repo
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug IneedthisWeb.CanaryMapPlug, create: :show, delete: :show
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -15,8 +15,8 @@ defmodule PhilomenaWeb.Topic.MoveController do
     id_field: "short_name",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug
-  plug PhilomenaWeb.CanaryMapPlug, create: :hide, delete: :hide
+  plug IneedthisWeb.LoadTopicPlug
+  plug IneedthisWeb.CanaryMapPlug, create: :hide, delete: :hide
   plug :authorize_resource, model: Topic, persisted: true
 
   def create(conn, %{"topic" => %{"target_forum_id" => target_id}}) do

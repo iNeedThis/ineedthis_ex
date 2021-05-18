@@ -1,9 +1,9 @@
-defmodule Philomena.Posts.Post do
+defmodule Ineedthis.Posts.Post do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
-  alias Philomena.Topics.Topic
+  alias Ineedthis.Users.User
+  alias Ineedthis.Topics.Topic
 
   schema "posts" do
     belongs_to :user, User

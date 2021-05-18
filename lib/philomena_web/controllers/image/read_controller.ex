@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Image.ReadController do
+defmodule IneedthisWeb.Image.ReadController do
   import Plug.Conn
-  use PhilomenaWeb, :controller
+  use IneedthisWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images
 
   plug :load_resource, model: Image, id_name: "image_id", persisted: true
 

@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Registration.TotpController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Registration.TotpController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.UserAuth
-  alias Philomena.Users.User
-  alias Philomena.Users
-  alias Philomena.Repo
+  alias IneedthisWeb.UserAuth
+  alias Ineedthis.Users.User
+  alias Ineedthis.Users
+  alias Ineedthis.Repo
 
   def edit(conn, _params) do
     user = conn.assigns.current_user

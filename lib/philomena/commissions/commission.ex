@@ -1,10 +1,10 @@
-defmodule Philomena.Commissions.Commission do
+defmodule Ineedthis.Commissions.Commission do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Commissions.Item
-  alias Philomena.Images.Image
-  alias Philomena.Users.User
+  alias Ineedthis.Commissions.Item
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Users.User
 
   schema "commissions" do
     belongs_to :user, User

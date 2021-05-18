@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.AvatarGeneratorView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.AvatarGeneratorView do
+  use IneedthisWeb, :view
   use Bitwise
 
-  alias Philomena.Config
+  alias Ineedthis.Config
 
   def generated_avatar(displayed_name) do
     config = config()

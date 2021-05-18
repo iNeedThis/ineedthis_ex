@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Page.HistoryController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Page.HistoryController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.StaticPages.StaticPage
-  alias Philomena.StaticPages.Version
-  alias Philomena.Repo
+  alias Ineedthis.StaticPages.StaticPage
+  alias Ineedthis.StaticPages.Version
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :load_resource, model: StaticPage, id_name: "page_id", id_field: "slug", persisted: true

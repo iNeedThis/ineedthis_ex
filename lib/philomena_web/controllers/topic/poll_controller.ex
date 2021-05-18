@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Topic.PollController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Topic.PollController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Polls
-  alias Philomena.Repo
+  alias Ineedthis.Forums.Forum
+  alias Ineedthis.Polls
+  alias Ineedthis.Repo
 
   plug :load_and_authorize_resource,
     model: Forum,
@@ -11,8 +11,8 @@ defmodule PhilomenaWeb.Topic.PollController do
     id_field: "short_name",
     persisted: true
 
-  plug PhilomenaWeb.LoadTopicPlug
-  plug PhilomenaWeb.LoadPollPlug
+  plug IneedthisWeb.LoadTopicPlug
+  plug IneedthisWeb.LoadPollPlug
 
   plug :verify_authorized
   plug :preload_options
@@ -45,7 +45,7 @@ defmodule PhilomenaWeb.Topic.PollController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :hide, conn.assigns.topic) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

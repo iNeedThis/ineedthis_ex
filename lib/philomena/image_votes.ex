@@ -1,4 +1,4 @@
-defmodule Philomena.ImageVotes do
+defmodule Ineedthis.ImageVotes do
   @moduledoc """
   The ImageVotes context.
   """
@@ -6,9 +6,9 @@ defmodule Philomena.ImageVotes do
   import Ecto.Query, warn: false
   alias Ecto.Multi
 
-  alias Philomena.ImageVotes.ImageVote
-  alias Philomena.UserStatistics
-  alias Philomena.Images.Image
+  alias Ineedthis.ImageVotes.ImageVote
+  alias Ineedthis.UserStatistics
+  alias Ineedthis.Images.Image
 
   @doc """
   Creates a image_vote.

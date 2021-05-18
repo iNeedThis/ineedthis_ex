@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Filter.CurrentController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Filter.CurrentController do
+  use IneedthisWeb, :controller
 
   @cookie_opts [max_age: 788_923_800, same_site: "Lax"]
 
-  alias Philomena.{Filters, Filters.Filter, Users.User}
-  alias Philomena.Repo
+  alias Ineedthis.{Filters, Filters.Filter, Users.User}
+  alias Ineedthis.Repo
 
   plug :load_resource, model: Filter
 

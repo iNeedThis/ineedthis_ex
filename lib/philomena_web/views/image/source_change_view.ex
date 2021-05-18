@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Image.SourceChangeView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Image.SourceChangeView do
+  use IneedthisWeb, :view
 end

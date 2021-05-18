@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.IpProfileView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.IpProfileView do
+  use IneedthisWeb, :view
 end

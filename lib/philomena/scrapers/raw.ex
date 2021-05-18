@@ -1,9 +1,9 @@
-defmodule Philomena.Scrapers.Raw do
+defmodule Ineedthis.Scrapers.Raw do
   @mime_types ["image/gif", "image/jpeg", "image/png", "image/svg", "image/svg+xml", "video/webm"]
 
   @spec can_handle?(URI.t(), String.t()) :: true | false
   def can_handle?(_uri, url) do
-    Philomena.Http.head(url)
+    Ineedthis.Http.head(url)
     |> case do
       {:ok, %Tesla.Env{status: 200, headers: headers}} ->
         headers

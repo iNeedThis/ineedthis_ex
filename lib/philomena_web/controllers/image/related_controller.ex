@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.Image.RelatedController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.RelatedController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.ImageLoader
-  alias Philomena.Interactions
-  alias Philomena.Images.Image
-  alias Philomena.Elasticsearch
+  alias IneedthisWeb.ImageLoader
+  alias Ineedthis.Interactions
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Elasticsearch
   import Ecto.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show
+  plug IneedthisWeb.CanaryMapPlug, index: :show
 
   plug :load_and_authorize_resource,
     model: Image,

@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.PasswordControllerTest do
-  use PhilomenaWeb.ConnCase, async: true
+defmodule IneedthisWeb.PasswordControllerTest do
+  use IneedthisWeb.ConnCase, async: true
 
-  alias Philomena.Users
-  alias Philomena.Repo
-  import Philomena.UsersFixtures
+  alias Ineedthis.Users
+  alias Ineedthis.Repo
+  import Ineedthis.UsersFixtures
 
   setup do
     %{user: confirmed_user_fixture()}

@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.Image.SourceChangeController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.SourceChangeController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.SourceChanges.SourceChange
-  alias Philomena.Repo
+  alias Ineedthis.Images.Image
+  alias Ineedthis.SourceChanges.SourceChange
+  alias Ineedthis.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.CanaryMapPlug, index: :show
+  plug IneedthisWeb.CanaryMapPlug, index: :show
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def index(conn, _params) do

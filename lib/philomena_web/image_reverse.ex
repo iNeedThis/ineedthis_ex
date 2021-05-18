@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.ImageReverse do
-  alias Philomena.Analyzers
-  alias Philomena.Processors
-  alias Philomena.DuplicateReports
-  alias Philomena.Repo
+defmodule IneedthisWeb.ImageReverse do
+  alias Ineedthis.Analyzers
+  alias Ineedthis.Processors
+  alias Ineedthis.DuplicateReports
+  alias Ineedthis.Repo
   import Ecto.Query
 
   def images(image_params) do

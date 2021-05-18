@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.FilterSelectPlug do
+defmodule IneedthisWeb.FilterSelectPlug do
   @moduledoc """
   This plug sets up the filter menu for the layout if there is a
   user currently signed in.
 
   ## Example
 
-      plug PhilomenaWeb.FilterSelectPlug
+      plug IneedthisWeb.FilterSelectPlug
   """
 
-  alias Philomena.Filters
-  alias Philomena.Users
+  alias Ineedthis.Filters
+  alias Ineedthis.Users
   alias Plug.Conn
 
   @spoiler_types %{

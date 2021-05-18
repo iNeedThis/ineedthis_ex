@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Conversation.MessageView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Conversation.MessageView do
+  use IneedthisWeb, :view
 end

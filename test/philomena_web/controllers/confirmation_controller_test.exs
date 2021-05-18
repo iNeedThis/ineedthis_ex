@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.ConfirmationControllerTest do
-  use PhilomenaWeb.ConnCase, async: true
+defmodule IneedthisWeb.ConfirmationControllerTest do
+  use IneedthisWeb.ConnCase, async: true
 
-  alias Philomena.Users
-  alias Philomena.Repo
-  import Philomena.UsersFixtures
+  alias Ineedthis.Users
+  alias Ineedthis.Repo
+  import Ineedthis.UsersFixtures
 
   setup do
     %{user: user_fixture()}

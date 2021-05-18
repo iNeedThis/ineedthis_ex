@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Post.PreviewView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Post.PreviewView do
+  use IneedthisWeb, :view
 end

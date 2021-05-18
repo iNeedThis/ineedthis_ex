@@ -1,17 +1,17 @@
-defmodule PhilomenaWeb.GalleryController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.GalleryController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.ImageLoader
-  alias PhilomenaWeb.NotificationCountPlug
-  alias Philomena.Elasticsearch
-  alias Philomena.Interactions
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Galleries
-  alias Philomena.Images.Image
+  alias IneedthisWeb.ImageLoader
+  alias IneedthisWeb.NotificationCountPlug
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.Interactions
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.Galleries
+  alias Ineedthis.Images.Image
   import Ecto.Query
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:new, :create, :edit, :update, :delete]
-  plug PhilomenaWeb.MapParameterPlug, [param: "gallery"] when action in [:index]
+  plug IneedthisWeb.FilterBannedUsersPlug when action in [:new, :create, :edit, :update, :delete]
+  plug IneedthisWeb.MapParameterPlug, [param: "gallery"] when action in [:index]
 
   plug :load_and_authorize_resource,
     model: Gallery,

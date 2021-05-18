@@ -1,8 +1,8 @@
-defmodule Philomena.UserIps.UserIp do
+defmodule Ineedthis.UserIps.UserIp do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
+  alias Ineedthis.Users.User
 
   schema "user_ips" do
     belongs_to :user, User

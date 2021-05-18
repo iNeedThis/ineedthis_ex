@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Admin.DonationController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.DonationController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Donations.Donation
-  alias Philomena.Donations
-  alias Philomena.Repo
+  alias Ineedthis.Donations.Donation
+  alias Ineedthis.Donations
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -35,7 +35,7 @@ defmodule PhilomenaWeb.Admin.DonationController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, Donation) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

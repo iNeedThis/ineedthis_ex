@@ -1,4 +1,4 @@
-defmodule Philomena.Notifications.Notification do
+defmodule Ineedthis.Notifications.Notification do
   use Ecto.Schema
   import Ecto.Changeset
 

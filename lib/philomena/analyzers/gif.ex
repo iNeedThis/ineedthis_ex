@@ -1,4 +1,4 @@
-defmodule Philomena.Analyzers.Gif do
+defmodule Ineedthis.Analyzers.Gif do
   def analyze(file) do
     stats = stats(file)
 

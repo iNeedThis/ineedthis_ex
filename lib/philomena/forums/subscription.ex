@@ -1,9 +1,9 @@
-defmodule Philomena.Forums.Subscription do
+defmodule Ineedthis.Forums.Subscription do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Users.User
+  alias Ineedthis.Forums.Forum
+  alias Ineedthis.Users.User
 
   @primary_key false
 

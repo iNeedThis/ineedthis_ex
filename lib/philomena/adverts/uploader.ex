@@ -1,10 +1,10 @@
-defmodule Philomena.Adverts.Uploader do
+defmodule Ineedthis.Adverts.Uploader do
   @moduledoc """
   Upload and processing callback logic for Advert images.
   """
 
-  alias Philomena.Adverts.Advert
-  alias Philomena.Uploader
+  alias Ineedthis.Adverts.Advert
+  alias Ineedthis.Uploader
 
   def analyze_upload(advert, params) do
     Uploader.analyze_upload(advert, "image", params["image"], &Advert.image_changeset/2)
@@ -19,6 +19,6 @@ defmodule Philomena.Adverts.Uploader do
   end
 
   defp advert_file_root do
-    Application.get_env(:philomena, :advert_file_root)
+    Application.get_env(:ineedthis, :advert_file_root)
   end
 end

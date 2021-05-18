@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Admin.UserView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Admin.UserView do
+  use IneedthisWeb, :view
 
   def page_params(params) do
     []

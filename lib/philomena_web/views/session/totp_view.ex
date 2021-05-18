@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Session.TotpView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Session.TotpView do
+  use IneedthisWeb, :view
 end

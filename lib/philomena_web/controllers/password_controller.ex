@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.PasswordController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.PasswordController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users
+  alias Ineedthis.Users
 
-  plug PhilomenaWeb.CaptchaPlug when action in [:new, :create]
-  plug PhilomenaWeb.CheckCaptchaPlug when action in [:create]
-  plug PhilomenaWeb.CompromisedPasswordCheckPlug when action in [:update]
+  plug IneedthisWeb.CaptchaPlug when action in [:new, :create]
+  plug IneedthisWeb.CheckCaptchaPlug when action in [:create]
+  plug IneedthisWeb.CompromisedPasswordCheckPlug when action in [:update]
   plug :get_user_by_reset_password_token when action in [:edit, :update]
 
   def new(conn, _params) do

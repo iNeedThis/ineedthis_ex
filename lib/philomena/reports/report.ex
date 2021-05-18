@@ -1,8 +1,8 @@
-defmodule Philomena.Reports.Report do
+defmodule Ineedthis.Reports.Report do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
+  alias Ineedthis.Users.User
 
   schema "reports" do
     belongs_to :user, User

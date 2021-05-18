@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.Image.DescriptionController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.DescriptionController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.CanaryMapPlug, update: :edit_description
+  plug IneedthisWeb.FilterBannedUsersPlug
+  plug IneedthisWeb.CanaryMapPlug, update: :edit_description
 
   plug :load_and_authorize_resource,
     model: Image,
@@ -20,16 +20,16 @@ defmodule PhilomenaWeb.Image.DescriptionController do
 
     case Images.update_description(image, image_params) do
       {:ok, image} ->
-        PhilomenaWeb.Endpoint.broadcast!(
+        IneedthisWeb.Endpoint.broadcast!(
           "firehose",
           "image:description_update",
           %{image_id: image.id, added: image.description, removed: old_description}
         )
 
-        PhilomenaWeb.Endpoint.broadcast!(
+        IneedthisWeb.Endpoint.broadcast!(
           "firehose",
           "image:update",
-          PhilomenaWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
+          IneedthisWeb.Api.Json.ImageView.render("show.json", %{image: image, interactions: []})
         )
 
         Images.reindex_image(image)
@@ -37,7 +37,7 @@ defmodule PhilomenaWeb.Image.DescriptionController do
         body = TextileRenderer.render_one(%{body: image.description}, conn)
 
         conn
-        |> put_view(PhilomenaWeb.ImageView)
+        |> put_view(IneedthisWeb.ImageView)
         |> render("_description.html", layout: false, image: image, body: body)
 
       {:error, changeset} ->

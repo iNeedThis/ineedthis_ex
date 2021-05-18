@@ -1,15 +1,15 @@
-defmodule Philomena.TagChanges do
+defmodule Ineedthis.TagChanges do
   @moduledoc """
   The TagChanges context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.Images.Tagging
-  alias Philomena.Tags.Tag
-  alias Philomena.Images
+  alias Ineedthis.TagChanges.TagChange
+  alias Ineedthis.Images.Tagging
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.Images
 
   # TODO: this is substantially similar to Images.batch_update/4.
   # Perhaps it should be extracted.

@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.Image.ReportingView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Image.ReportingView do
+  use IneedthisWeb, :view
 end

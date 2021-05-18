@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.ForumListPlug do
+defmodule IneedthisWeb.ForumListPlug do
   alias Plug.Conn
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Repo
+  alias Ineedthis.Forums.Forum
+  alias Ineedthis.Repo
   alias Canada.Can
   import Ecto.Query
 

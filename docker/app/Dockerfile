@@ -5,13 +5,13 @@ RUN apk update \
     && mix local.hex --force \
     && mix local.rebar --force
 
-ADD https://api.github.com/repos/philomena-dev/cli_intensities/git/refs/heads/master /tmp/cli_intensities_version.json
-RUN git clone https://github.com/philomena-dev/cli_intensities /tmp/cli_intensities \
+ADD https://api.github.com/repos/ineedthis/cli_intensities/git/refs/heads/master /tmp/cli_intensities_version.json
+RUN git clone https://github.com/ineedthis/cli_intensities /tmp/cli_intensities \
     && cd /tmp/cli_intensities \
     && make -j$(nproc) install
 
-ADD https://api.github.com/repos/philomena-dev/mediatools/git/refs/heads/master /tmp/mediatools_version.json
-RUN git clone https://github.com/philomena-dev/mediatools /tmp/mediatools \
+ADD https://api.github.com/repos/ineedthis/mediatools/git/refs/heads/master /tmp/mediatools_version.json
+RUN git clone https://github.com/ineedthis/mediatools /tmp/mediatools \
     && cd /tmp/mediatools \
     && make -j$(nproc) install
 

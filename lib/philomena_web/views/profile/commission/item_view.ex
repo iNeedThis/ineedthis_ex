@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Profile.Commission.ItemView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Profile.Commission.ItemView do
+  use IneedthisWeb, :view
 
-  alias Philomena.Commissions.Commission
+  alias Ineedthis.Commissions.Commission
 
   def types, do: Commission.types()
 end

@@ -1,4 +1,4 @@
-defmodule Philomena.Badges.Badge do
+defmodule Ineedthis.Badges.Badge do
   use Ecto.Schema
   import Ecto.Changeset
 

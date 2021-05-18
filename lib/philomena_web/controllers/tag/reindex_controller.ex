@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Tag.ReindexController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Tag.ReindexController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Tags.Tag
-  alias Philomena.Tags
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.Tags
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :alias
+  plug IneedthisWeb.CanaryMapPlug, create: :alias
 
   plug :load_and_authorize_resource,
     model: Tag,

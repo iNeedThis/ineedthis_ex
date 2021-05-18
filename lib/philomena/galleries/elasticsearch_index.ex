@@ -1,5 +1,5 @@
-defmodule Philomena.Galleries.ElasticsearchIndex do
-  @behaviour Philomena.ElasticsearchIndex
+defmodule Ineedthis.Galleries.ElasticsearchIndex do
+  @behaviour Ineedthis.ElasticsearchIndex
 
   @impl true
   def index_name do

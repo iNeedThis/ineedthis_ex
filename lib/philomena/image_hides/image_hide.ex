@@ -1,9 +1,9 @@
-defmodule Philomena.ImageHides.ImageHide do
+defmodule Ineedthis.ImageHides.ImageHide do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Images.Image
-  alias Philomena.Users.User
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Users.User
 
   @primary_key false
 

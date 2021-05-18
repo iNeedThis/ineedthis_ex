@@ -1,5 +1,5 @@
-defmodule Philomena.ImagePurgeWorker do
-  alias Philomena.Images
+defmodule Ineedthis.ImagePurgeWorker do
+  alias Ineedthis.Images
 
   def perform(files) do
     Images.perform_purge(files)

@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Image.UploaderController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.UploaderController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
-  alias Philomena.Repo
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images
+  alias Ineedthis.Repo
 
   plug :verify_authorized
   plug :load_resource, model: Image, id_name: "image_id", persisted: true
@@ -17,14 +17,14 @@ defmodule PhilomenaWeb.Image.UploaderController do
     changeset = Images.change_image(image)
 
     conn
-    |> put_view(PhilomenaWeb.ImageView)
+    |> put_view(IneedthisWeb.ImageView)
     |> render("_uploader.html", layout: false, image: image, changeset: changeset)
   end
 
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :show, :ip_address) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

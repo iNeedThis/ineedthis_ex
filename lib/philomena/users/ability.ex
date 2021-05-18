@@ -1,33 +1,33 @@
-defimpl Canada.Can, for: [Atom, Philomena.Users.User] do
-  alias Philomena.Users.User
-  alias Philomena.Roles.Role
-  alias Philomena.Badges.Award
-  alias Philomena.Badges.Badge
-  alias Philomena.Channels.Channel
-  alias Philomena.Comments.Comment
-  alias Philomena.Commissions.Commission
-  alias Philomena.Conversations.Conversation
-  alias Philomena.DuplicateReports.DuplicateReport
-  alias Philomena.DnpEntries.DnpEntry
-  alias Philomena.Images.Image
-  alias Philomena.Forums.Forum
-  alias Philomena.Topics.Topic
-  alias Philomena.ModNotes.ModNote
-  alias Philomena.Posts.Post
-  alias Philomena.Filters.Filter
-  alias Philomena.Galleries.Gallery
-  alias Philomena.DnpEntries.DnpEntry
-  alias Philomena.ArtistLinks.ArtistLink
-  alias Philomena.Tags.Tag
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.Reports.Report
-  alias Philomena.StaticPages.StaticPage
-  alias Philomena.Adverts.Advert
-  alias Philomena.SiteNotices.SiteNotice
+defimpl Canada.Can, for: [Atom, Ineedthis.Users.User] do
+  alias Ineedthis.Users.User
+  alias Ineedthis.Roles.Role
+  alias Ineedthis.Badges.Award
+  alias Ineedthis.Badges.Badge
+  alias Ineedthis.Channels.Channel
+  alias Ineedthis.Comments.Comment
+  alias Ineedthis.Commissions.Commission
+  alias Ineedthis.Conversations.Conversation
+  alias Ineedthis.DuplicateReports.DuplicateReport
+  alias Ineedthis.DnpEntries.DnpEntry
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Forums.Forum
+  alias Ineedthis.Topics.Topic
+  alias Ineedthis.ModNotes.ModNote
+  alias Ineedthis.Posts.Post
+  alias Ineedthis.Filters.Filter
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.DnpEntries.DnpEntry
+  alias Ineedthis.ArtistLinks.ArtistLink
+  alias Ineedthis.Tags.Tag
+  alias Ineedthis.TagChanges.TagChange
+  alias Ineedthis.Reports.Report
+  alias Ineedthis.StaticPages.StaticPage
+  alias Ineedthis.Adverts.Advert
+  alias Ineedthis.SiteNotices.SiteNotice
 
-  alias Philomena.Bans.User, as: UserBan
-  alias Philomena.Bans.Subnet, as: SubnetBan
-  alias Philomena.Bans.Fingerprint, as: FingerprintBan
+  alias Ineedthis.Bans.User, as: UserBan
+  alias Ineedthis.Bans.Subnet, as: SubnetBan
+  alias Ineedthis.Bans.Fingerprint, as: FingerprintBan
 
   # Admins can do anything
   def can?(%User{role: "admin"}, _action, _model), do: true

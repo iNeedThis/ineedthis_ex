@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.ConversationView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.ConversationView do
+  use IneedthisWeb, :view
 
   def other_party(%{id: user_id}, %{to_id: user_id} = conversation),
     do: conversation.from

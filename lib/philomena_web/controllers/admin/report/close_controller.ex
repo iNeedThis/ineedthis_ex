@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Admin.Report.CloseController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.Report.CloseController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Reports.Report
-  alias Philomena.Reports
+  alias Ineedthis.Reports.Report
+  alias Ineedthis.Reports
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :edit, delete: :edit
+  plug IneedthisWeb.CanaryMapPlug, create: :edit, delete: :edit
   plug :load_and_authorize_resource, model: Report, id_name: "report_id", persisted: true
 
   def create(conn, _params) do

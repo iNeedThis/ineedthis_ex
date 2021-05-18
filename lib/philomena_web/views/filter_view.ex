@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.FilterView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.FilterView do
+  use IneedthisWeb, :view
 end

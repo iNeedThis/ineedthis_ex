@@ -1,3 +1,3 @@
-defmodule PhilomenaWeb.AvatarView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.AvatarView do
+  use IneedthisWeb, :view
 end

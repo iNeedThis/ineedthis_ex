@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Api.Json.ImageView do
-  use PhilomenaWeb, :view
-  alias PhilomenaWeb.ImageView
+defmodule IneedthisWeb.Api.Json.ImageView do
+  use IneedthisWeb, :view
+  alias IneedthisWeb.ImageView
 
   def render("index.json", %{images: images, interactions: interactions, total: total} = assigns) do
     %{
-      images: render_many(images, PhilomenaWeb.Api.Json.ImageView, "image.json", assigns),
+      images: render_many(images, IneedthisWeb.Api.Json.ImageView, "image.json", assigns),
       interactions: interactions,
       total: total
     }
@@ -12,7 +12,7 @@ defmodule PhilomenaWeb.Api.Json.ImageView do
 
   def render("show.json", %{image: image, interactions: interactions} = assigns) do
     %{
-      image: render_one(image, PhilomenaWeb.Api.Json.ImageView, "image.json", assigns),
+      image: render_one(image, IneedthisWeb.Api.Json.ImageView, "image.json", assigns),
       interactions: interactions
     }
   end
@@ -45,7 +45,7 @@ defmodule PhilomenaWeb.Api.Json.ImageView do
   end
 
   def render("image.json", %{conn: conn, image: %{hidden_from_users: false} = image}) do
-    result = render_one(image, PhilomenaWeb.Api.Json.ImageView, "image.json", %{image: image})
+    result = render_one(image, IneedthisWeb.Api.Json.ImageView, "image.json", %{image: image})
 
     Map.put(result, :spoilered, ImageView.filter_or_spoiler_hits?(conn, image))
   end
@@ -71,7 +71,7 @@ defmodule PhilomenaWeb.Api.Json.ImageView do
       tag_ids: Enum.map(image.tags, & &1.id),
       uploader: if(!!image.user and !image.anonymous, do: image.user.name),
       uploader_id: if(!!image.user and !image.anonymous, do: image.user.id),
-      wilson_score: Philomena.Images.ElasticsearchIndex.wilson_score(image),
+      wilson_score: Ineedthis.Images.ElasticsearchIndex.wilson_score(image),
       intensities: intensities(image),
       score: image.score,
       upvotes: image.upvotes_count,

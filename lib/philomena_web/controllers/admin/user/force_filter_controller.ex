@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Admin.User.ForceFilterController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.User.ForceFilterController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users.User
-  alias Philomena.Users
+  alias Ineedthis.Users.User
+  alias Ineedthis.Users
 
   plug :verify_authorized
   plug :load_resource, model: User, id_name: "user_id", id_field: "slug", persisted: true
@@ -32,7 +32,7 @@ defmodule PhilomenaWeb.Admin.User.ForceFilterController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, User) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

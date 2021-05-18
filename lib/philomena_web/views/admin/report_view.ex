@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.Admin.ReportView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Admin.ReportView do
+  use IneedthisWeb, :view
 
-  alias Philomena.Images.Image
-  alias Philomena.Comments.Comment
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Comments.Comment
 
-  alias PhilomenaWeb.ReportView
-  alias PhilomenaWeb.ProfileView
+  alias IneedthisWeb.ReportView
+  alias IneedthisWeb.ProfileView
 
   defp link_to_reported_thing(conn, reportable),
     do: ReportView.link_to_reported_thing(conn, reportable)
@@ -40,7 +40,7 @@ defmodule PhilomenaWeb.Admin.ReportView do
   end
 
   def reported_image(conn, %Image{} = image) do
-    render(PhilomenaWeb.ImageView, "_image_container.html",
+    render(IneedthisWeb.ImageView, "_image_container.html",
       image: image,
       size: :thumb_tiny,
       conn: conn
@@ -48,7 +48,7 @@ defmodule PhilomenaWeb.Admin.ReportView do
   end
 
   def reported_image(conn, %Comment{image: image}) do
-    render(PhilomenaWeb.ImageView, "_image_container.html",
+    render(IneedthisWeb.ImageView, "_image_container.html",
       image: image,
       size: :thumb_tiny,
       conn: conn

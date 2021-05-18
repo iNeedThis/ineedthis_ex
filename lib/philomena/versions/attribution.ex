@@ -1,10 +1,10 @@
-defimpl Philomena.Attribution, for: Philomena.Versions.Version do
+defimpl Ineedthis.Attribution, for: Ineedthis.Versions.Version do
   def object_identifier(version) do
-    Philomena.Attribution.object_identifier(version.parent)
+    Ineedthis.Attribution.object_identifier(version.parent)
   end
 
   def best_user_identifier(version) do
-    Philomena.Attribution.best_user_identifier(version.parent)
+    Ineedthis.Attribution.best_user_identifier(version.parent)
   end
 
   def anonymous?(version) do

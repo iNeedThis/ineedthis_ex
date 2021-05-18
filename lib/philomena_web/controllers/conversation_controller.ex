@@ -1,15 +1,15 @@
-defmodule PhilomenaWeb.ConversationController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.ConversationController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.NotificationCountPlug
-  alias Philomena.{Conversations, Conversations.Conversation, Conversations.Message}
-  alias PhilomenaWeb.TextileRenderer
-  alias Philomena.Repo
+  alias IneedthisWeb.NotificationCountPlug
+  alias Ineedthis.{Conversations, Conversations.Conversation, Conversations.Message}
+  alias IneedthisWeb.TextileRenderer
+  alias Ineedthis.Repo
   import Ecto.Query
 
-  plug PhilomenaWeb.FilterBannedUsersPlug when action in [:new, :create]
+  plug IneedthisWeb.FilterBannedUsersPlug when action in [:new, :create]
 
-  plug PhilomenaWeb.LimitPlug,
+  plug IneedthisWeb.LimitPlug,
        [time: 60, error: "You may only create a conversation once every minute."]
        when action in [:create]
 

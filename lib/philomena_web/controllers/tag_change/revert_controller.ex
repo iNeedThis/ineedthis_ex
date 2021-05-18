@@ -1,11 +1,11 @@
-defmodule PhilomenaWeb.TagChange.RevertController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.TagChange.RevertController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.TagChanges.TagChange
-  alias Philomena.TagChanges
+  alias Ineedthis.TagChanges.TagChange
+  alias Ineedthis.TagChanges
 
   plug :verify_authorized
-  plug PhilomenaWeb.UserAttributionPlug
+  plug IneedthisWeb.UserAttributionPlug
 
   def create(conn, %{"ids" => ids}) when is_list(ids) do
     attributes = conn.assigns.attributes
@@ -34,7 +34,7 @@ defmodule PhilomenaWeb.TagChange.RevertController do
   defp verify_authorized(conn, _params) do
     case Canada.Can.can?(conn.assigns.current_user, :revert, TagChange) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

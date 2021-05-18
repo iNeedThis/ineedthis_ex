@@ -1,17 +1,17 @@
-defmodule PhilomenaWeb.Gallery.ReportController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Gallery.ReportController do
+  use IneedthisWeb, :controller
 
-  alias PhilomenaWeb.ReportController
-  alias PhilomenaWeb.ReportView
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Reports.Report
-  alias Philomena.Reports
+  alias IneedthisWeb.ReportController
+  alias IneedthisWeb.ReportView
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.Reports.Report
+  alias Ineedthis.Reports
 
-  plug PhilomenaWeb.FilterBannedUsersPlug
-  plug PhilomenaWeb.UserAttributionPlug
-  plug PhilomenaWeb.CaptchaPlug
-  plug PhilomenaWeb.CheckCaptchaPlug when action in [:create]
-  plug PhilomenaWeb.CanaryMapPlug, new: :show, create: :show
+  plug IneedthisWeb.FilterBannedUsersPlug
+  plug IneedthisWeb.UserAttributionPlug
+  plug IneedthisWeb.CaptchaPlug
+  plug IneedthisWeb.CheckCaptchaPlug when action in [:create]
+  plug IneedthisWeb.CanaryMapPlug, new: :show, create: :show
 
   plug :load_and_authorize_resource,
     model: Gallery,

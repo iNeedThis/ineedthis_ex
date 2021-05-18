@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Admin.FingerprintBanController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.FingerprintBanController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Bans.Fingerprint, as: FingerprintBan
-  alias Philomena.Bans
-  alias Philomena.Repo
+  alias Ineedthis.Bans.Fingerprint, as: FingerprintBan
+  alias Ineedthis.Bans
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -96,14 +96,14 @@ defmodule PhilomenaWeb.Admin.FingerprintBanController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, FingerprintBan) do
       true -> conn
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 
   defp check_can_delete(conn, _opts) do
     case conn.assigns.current_user.role == "admin" do
       true -> conn
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

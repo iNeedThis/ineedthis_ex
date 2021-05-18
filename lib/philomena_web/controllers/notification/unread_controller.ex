@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.Notification.UnreadController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Notification.UnreadController do
+  use IneedthisWeb, :controller
 
   def index(conn, _params) do
     json(conn, %{

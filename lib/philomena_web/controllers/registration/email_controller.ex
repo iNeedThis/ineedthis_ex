@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Registration.EmailController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Registration.EmailController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users
+  alias Ineedthis.Users
 
   def create(conn, %{"current_password" => password, "user" => user_params}) do
     user = conn.assigns.current_user

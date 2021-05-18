@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.HashController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.HashController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images
 
-  plug PhilomenaWeb.CanaryMapPlug, delete: :hide
+  plug IneedthisWeb.CanaryMapPlug, delete: :hide
   plug :load_and_authorize_resource, model: Image, id_name: "image_id", persisted: true
 
   def delete(conn, _params) do

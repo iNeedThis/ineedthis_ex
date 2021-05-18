@@ -1,13 +1,13 @@
-defmodule PhilomenaWeb.ReportView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.ReportView do
+  use IneedthisWeb, :view
 
-  alias Philomena.Images.Image
-  alias Philomena.Comments.Comment
-  alias Philomena.Commissions.Commission
-  alias Philomena.Conversations.Conversation
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Posts.Post
-  alias Philomena.Users.User
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Comments.Comment
+  alias Ineedthis.Commissions.Commission
+  alias Ineedthis.Conversations.Conversation
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.Posts.Post
+  alias Ineedthis.Users.User
 
   import Ecto.Changeset
 

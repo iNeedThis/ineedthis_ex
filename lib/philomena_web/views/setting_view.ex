@@ -1,5 +1,5 @@
-defmodule PhilomenaWeb.SettingView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.SettingView do
+  use IneedthisWeb, :view
 
   def theme_options(conn) do
     [

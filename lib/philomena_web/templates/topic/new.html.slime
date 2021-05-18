@@ -21,8 +21,8 @@
 
       = inputs_for f, :posts, fn fp ->
         .field
-          = render PhilomenaWeb.TextileView, "_help.html", conn: @conn
-          = render PhilomenaWeb.TextileView, "_toolbar.html", conn: @conn
+          = render IneedthisWeb.TextileView, "_help.html", conn: @conn
+          = render IneedthisWeb.TextileView, "_toolbar.html", conn: @conn
           = textarea fp, :body, class: "input input--wide input--text js-preview-input js-toolbar-input", placeholder: "Please read the site rules before posting and use [spoiler][/spoiler] for NSFW stuff in SFW forums.", required: true
           = error_tag fp, :body
 
@@ -36,7 +36,7 @@
           input.toggle-box id="add_poll" name="add_poll" type="checkbox"
           label for="add_poll" Add a poll
           .toggle-box-container
-            = render PhilomenaWeb.Topic.PollView, "_form.html", Map.put(assigns, :f, fp)
+            = render IneedthisWeb.Topic.PollView, "_form.html", Map.put(assigns, :f, fp)
 
     .block__tab.communication-edit__tab.hidden data-tab="preview"
       ' [Loading preview...]

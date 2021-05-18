@@ -1,8 +1,8 @@
-defmodule Philomena.UserFingerprints.UserFingerprint do
+defmodule Ineedthis.UserFingerprints.UserFingerprint do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Users.User
+  alias Ineedthis.Users.User
 
   schema "user_fingerprints" do
     belongs_to :user, User

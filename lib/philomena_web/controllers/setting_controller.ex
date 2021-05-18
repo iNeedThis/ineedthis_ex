@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.SettingController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.SettingController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users
-  alias Philomena.Users.User
-  alias Philomena.Schema.TagList
+  alias Ineedthis.Users
+  alias Ineedthis.Users.User
+  alias Ineedthis.Schema.TagList
   alias Plug.Conn
 
   def edit(conn, _params) do

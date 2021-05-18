@@ -1,7 +1,7 @@
-defmodule PhilomenaWeb.Admin.ArtistLinkView do
-  use PhilomenaWeb, :view
+defmodule IneedthisWeb.Admin.ArtistLinkView do
+  use IneedthisWeb, :view
 
-  alias Philomena.Tags.Tag
+  alias Ineedthis.Tags.Tag
 
   defp display_order(tags),
     do: Tag.display_order(tags)

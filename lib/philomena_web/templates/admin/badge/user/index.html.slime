@@ -4,12 +4,12 @@ h1
   ' badge
 
 - route = fn p -> Routes.admin_badge_user_path(@conn, :index, @badge, p) end
-- pagination = render PhilomenaWeb.PaginationView, "_pagination.html", page: @users, route: route, conn: @conn
+- pagination = render IneedthisWeb.PaginationView, "_pagination.html", page: @users, route: route, conn: @conn
 
 .block
   .block__header
     = pagination
-  
+
   .block__content
     table.table
       thead

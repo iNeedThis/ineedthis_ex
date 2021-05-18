@@ -1,11 +1,11 @@
-defmodule Philomena.Polls.Poll do
+defmodule Ineedthis.Polls.Poll do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Topics.Topic
-  alias Philomena.Users.User
-  alias Philomena.PollOptions.PollOption
-  alias Philomena.Schema.Time
+  alias Ineedthis.Topics.Topic
+  alias Ineedthis.Users.User
+  alias Ineedthis.PollOptions.PollOption
+  alias Ineedthis.Schema.Time
 
   schema "polls" do
     belongs_to :topic, Topic

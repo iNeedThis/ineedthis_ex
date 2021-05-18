@@ -1,8 +1,8 @@
-defmodule PhilomenaWeb.Admin.ForumController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.ForumController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Forums.Forum
-  alias Philomena.Forums
+  alias Ineedthis.Forums.Forum
+  alias Ineedthis.Forums
 
   plug :verify_authorized
   plug :load_resource, model: Forum, id_field: "short_name"
@@ -48,7 +48,7 @@ defmodule PhilomenaWeb.Admin.ForumController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :edit, Forum) do
       true -> conn
-      _false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      _false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

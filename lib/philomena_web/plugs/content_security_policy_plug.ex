@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.ContentSecurityPolicyPlug do
+defmodule IneedthisWeb.ContentSecurityPolicyPlug do
   import Plug.Conn
 
   @allowed_sources [
@@ -56,8 +56,8 @@ defmodule PhilomenaWeb.ContentSecurityPolicyPlug do
   defp get_config(conn), do: conn.private[:csp] || []
   defp set_config(value, conn), do: put_private(conn, :csp, value)
 
-  defp cdn_uri, do: Application.get_env(:philomena, :cdn_host) |> to_uri()
-  defp camo_uri, do: Application.get_env(:philomena, :camo_host) |> to_uri()
+  defp cdn_uri, do: Application.get_env(:ineedthis, :cdn_host) |> to_uri()
+  defp camo_uri, do: Application.get_env(:ineedthis, :camo_host) |> to_uri()
 
   defp to_uri(host) when host in [nil, ""], do: ""
   defp to_uri(host), do: URI.to_string(%URI{scheme: "https", host: host})

@@ -1,6 +1,6 @@
-defmodule PhilomenaWeb.FilterIdPlug do
-  alias Philomena.Filters.Filter
-  alias Philomena.Repo
+defmodule IneedthisWeb.FilterIdPlug do
+  alias Ineedthis.Filters.Filter
+  alias Ineedthis.Repo
 
   # No options
   def init([]), do: false

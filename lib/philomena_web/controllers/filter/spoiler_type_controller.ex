@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Filter.SpoilerTypeController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Filter.SpoilerTypeController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users
+  alias Ineedthis.Users
 
-  plug PhilomenaWeb.RequireUserPlug
+  plug IneedthisWeb.RequireUserPlug
 
   def update(conn, %{"user" => user_params}) do
     {:ok, user} = Users.update_spoiler_type(conn.assigns.current_user, user_params)

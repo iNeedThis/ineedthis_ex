@@ -1,9 +1,9 @@
-defmodule PhilomenaWeb.Admin.SiteNoticeController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Admin.SiteNoticeController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.SiteNotices.SiteNotice
-  alias Philomena.SiteNotices
-  alias Philomena.Repo
+  alias Ineedthis.SiteNotices.SiteNotice
+  alias Ineedthis.SiteNotices
+  alias Ineedthis.Repo
   import Ecto.Query
 
   plug :verify_authorized
@@ -63,7 +63,7 @@ defmodule PhilomenaWeb.Admin.SiteNoticeController do
   defp verify_authorized(conn, _opts) do
     case Canada.Can.can?(conn.assigns.current_user, :index, SiteNotice) do
       true -> conn
-      false -> PhilomenaWeb.NotAuthorizedPlug.call(conn)
+      false -> IneedthisWeb.NotAuthorizedPlug.call(conn)
     end
   end
 end

@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Image.TagLockController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Image.TagLockController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images
 
-  plug PhilomenaWeb.CanaryMapPlug, show: :hide, update: :hide, create: :hide, delete: :hide
+  plug IneedthisWeb.CanaryMapPlug, show: :hide, update: :hide, create: :hide, delete: :hide
 
   plug :load_and_authorize_resource,
     model: Image,

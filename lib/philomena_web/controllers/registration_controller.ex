@@ -1,12 +1,12 @@
-defmodule PhilomenaWeb.RegistrationController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.RegistrationController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Users
-  alias Philomena.Users.User
+  alias Ineedthis.Users
+  alias Ineedthis.Users.User
 
-  plug PhilomenaWeb.CaptchaPlug when action in [:new, :create]
-  plug PhilomenaWeb.CheckCaptchaPlug when action in [:create]
-  plug PhilomenaWeb.CompromisedPasswordCheckPlug when action in [:create]
+  plug IneedthisWeb.CaptchaPlug when action in [:new, :create]
+  plug IneedthisWeb.CheckCaptchaPlug when action in [:create]
+  plug IneedthisWeb.CompromisedPasswordCheckPlug when action in [:create]
   plug :assign_email_and_password_changesets when action in [:edit]
 
   def new(conn, _params) do

@@ -1,13 +1,13 @@
-defmodule Philomena.UserStatistics do
+defmodule Ineedthis.UserStatistics do
   @moduledoc """
   The UserStatistics context.
   """
 
   import Ecto.Query, warn: false
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.UserStatistics.UserStatistic
-  alias Philomena.Users.User
+  alias Ineedthis.UserStatistics.UserStatistic
+  alias Ineedthis.Users.User
 
   @doc """
   Updates a user_statistic.

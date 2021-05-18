@@ -1,4 +1,4 @@
-defmodule Philomena.StaticPages.StaticPage do
+defmodule Ineedthis.StaticPages.StaticPage do
   use Ecto.Schema
   import Ecto.Changeset
 

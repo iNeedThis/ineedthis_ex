@@ -1,21 +1,21 @@
-defmodule Philomena.Galleries do
+defmodule Ineedthis.Galleries do
   @moduledoc """
   The Galleries context.
   """
 
   import Ecto.Query, warn: false
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.Elasticsearch
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Galleries.Interaction
-  alias Philomena.Galleries.ElasticsearchIndex, as: GalleryIndex
-  alias Philomena.IndexWorker
-  alias Philomena.GalleryReorderWorker
-  alias Philomena.Notifications
-  alias Philomena.NotificationWorker
-  alias Philomena.Images
+  alias Ineedthis.Elasticsearch
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.Galleries.Interaction
+  alias Ineedthis.Galleries.ElasticsearchIndex, as: GalleryIndex
+  alias Ineedthis.IndexWorker
+  alias Ineedthis.GalleryReorderWorker
+  alias Ineedthis.Notifications
+  alias Ineedthis.NotificationWorker
+  alias Ineedthis.Images
 
   @doc """
   Gets a single gallery.
@@ -341,7 +341,7 @@ defmodule Philomena.Galleries do
   defp position_order(%{order_position_asc: true}), do: [asc: :position]
   defp position_order(_gallery), do: [desc: :position]
 
-  alias Philomena.Galleries.Subscription
+  alias Ineedthis.Galleries.Subscription
 
   def subscribed?(_gallery, nil), do: false
 

@@ -1,25 +1,25 @@
-defmodule Philomena.Users.User do
-  alias Philomena.Users.Password
-  alias Philomena.Slug
+defmodule Ineedthis.Users.User do
+  alias Ineedthis.Users.Password
+  alias Ineedthis.Slug
 
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Philomena.Schema.TagList
-  alias Philomena.Schema.Search
+  alias Ineedthis.Schema.TagList
+  alias Ineedthis.Schema.Search
 
-  alias Philomena.Filters.Filter
-  alias Philomena.ArtistLinks.ArtistLink
-  alias Philomena.Badges
-  alias Philomena.Notifications.UnreadNotification
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Users.User
-  alias Philomena.Commissions.Commission
-  alias Philomena.Roles.Role
-  alias Philomena.UserFingerprints.UserFingerprint
-  alias Philomena.UserIps.UserIp
-  alias Philomena.Bans.User, as: UserBan
-  alias Philomena.Donations.Donation
+  alias Ineedthis.Filters.Filter
+  alias Ineedthis.ArtistLinks.ArtistLink
+  alias Ineedthis.Badges
+  alias Ineedthis.Notifications.UnreadNotification
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.Users.User
+  alias Ineedthis.Commissions.Commission
+  alias Ineedthis.Roles.Role
+  alias Ineedthis.UserFingerprints.UserFingerprint
+  alias Ineedthis.UserIps.UserIp
+  alias Ineedthis.Bans.User, as: UserBan
+  alias Ineedthis.Donations.Donation
 
   @derive {Phoenix.Param, key: :slug}
   @derive {Inspect, except: [:password]}
@@ -165,7 +165,7 @@ defmodule Philomena.Users.User do
       message: "must be valid (e.g., user@example.com)"
     )
     |> validate_length(:email, max: 160)
-    |> unsafe_validate_unique(:email, Philomena.Repo)
+    |> unsafe_validate_unique(:email, Ineedthis.Repo)
   end
 
   defp validate_password(changeset) do
@@ -436,7 +436,7 @@ defmodule Philomena.Users.User do
 
   def create_totp_secret_changeset(user) do
     secret = :crypto.strong_rand_bytes(15) |> Base.encode32()
-    data = Philomena.Users.Encryptor.encrypt_model(secret)
+    data = Ineedthis.Users.Encryptor.encrypt_model(secret)
 
     user
     |> change(%{
@@ -514,9 +514,9 @@ defmodule Philomena.Users.User do
     "data:image/png;base64," <> png
   end
 
-  @spec totp_secret(%Philomena.Users.User{}) :: binary()
+  @spec totp_secret(%Ineedthis.Users.User{}) :: binary()
   def totp_secret(user) do
-    Philomena.Users.Encryptor.decrypt_model(
+    Ineedthis.Users.Encryptor.decrypt_model(
       user.encrypted_otp_secret,
       user.encrypted_otp_secret_iv,
       user.encrypted_otp_secret_salt

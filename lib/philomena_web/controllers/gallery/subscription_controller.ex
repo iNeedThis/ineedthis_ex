@@ -1,10 +1,10 @@
-defmodule PhilomenaWeb.Gallery.SubscriptionController do
-  use PhilomenaWeb, :controller
+defmodule IneedthisWeb.Gallery.SubscriptionController do
+  use IneedthisWeb, :controller
 
-  alias Philomena.Galleries.Gallery
-  alias Philomena.Galleries
+  alias Ineedthis.Galleries.Gallery
+  alias Ineedthis.Galleries
 
-  plug PhilomenaWeb.CanaryMapPlug, create: :show, delete: :show
+  plug IneedthisWeb.CanaryMapPlug, create: :show, delete: :show
   plug :load_and_authorize_resource, model: Gallery, id_name: "gallery_id", persisted: true
 
   def create(conn, _params) do

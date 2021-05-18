@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.FilterForcedUsersPlug do
+defmodule IneedthisWeb.FilterForcedUsersPlug do
   @moduledoc """
   Halts the request pipeline if the current image belongs to the conn's
   "forced filter".
@@ -6,10 +6,10 @@ defmodule PhilomenaWeb.FilterForcedUsersPlug do
 
   import Phoenix.Controller
   import Plug.Conn
-  alias Philomena.Search.String, as: SearchString
-  alias Philomena.Search.Evaluator
-  alias Philomena.Images.Query
-  alias PhilomenaWeb.ImageView
+  alias Ineedthis.Search.String, as: SearchString
+  alias Ineedthis.Search.Evaluator
+  alias Ineedthis.Images.Query
+  alias IneedthisWeb.ImageView
 
   def init(_opts) do
     []

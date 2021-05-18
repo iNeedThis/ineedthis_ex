@@ -1,4 +1,4 @@
-defmodule Philomena.Schema.BanId do
+defmodule Ineedthis.Schema.BanId do
   import Ecto.Changeset
 
   def put_ban_id(%{data: %{generated_ban_id: nil}} = changeset, prefix) do

@@ -1,4 +1,4 @@
-defmodule Philomena.Application do
+defmodule Ineedthis.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,43 +9,43 @@ defmodule Philomena.Application do
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
-      Philomena.Repo,
+      Ineedthis.Repo,
 
       # Background queueing system
-      Philomena.ExqSupervisor,
+      Ineedthis.ExqSupervisor,
 
-      # Starts a worker by calling: Philomena.Worker.start_link(arg)
-      # {Philomena.Worker, arg},
-      {Redix, name: :redix, host: Application.get_env(:philomena, :redis_host)},
+      # Starts a worker by calling: Ineedthis.Worker.start_link(arg)
+      # {Ineedthis.Worker, arg},
+      {Redix, name: :redix, host: Application.get_env(:ineedthis, :redis_host)},
       {Phoenix.PubSub,
        [
-         name: Philomena.PubSub,
+         name: Ineedthis.PubSub,
          adapter: Phoenix.PubSub.Redis,
-         host: Application.get_env(:philomena, :redis_host),
+         host: Application.get_env(:ineedthis, :redis_host),
          node_name: valid_node_name(node())
        ]},
 
       # Start the endpoint when the application starts
-      PhilomenaWeb.AdvertUpdater,
-      PhilomenaWeb.UserFingerprintUpdater,
-      PhilomenaWeb.UserIpUpdater,
-      PhilomenaWeb.Telemetry,
-      PhilomenaWeb.Endpoint,
+      IneedthisWeb.AdvertUpdater,
+      IneedthisWeb.UserFingerprintUpdater,
+      IneedthisWeb.UserIpUpdater,
+      IneedthisWeb.Telemetry,
+      IneedthisWeb.Endpoint,
 
       # Connection drainer for SIGTERM
-      {Plug.Cowboy.Drainer, refs: [PhilomenaWeb.Endpoint.HTTP]}
+      {Plug.Cowboy.Drainer, refs: [IneedthisWeb.Endpoint.HTTP]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Philomena.Supervisor]
+    opts = [strategy: :one_for_one, name: Ineedthis.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    PhilomenaWeb.Endpoint.config_change(changed, removed)
+    IneedthisWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 

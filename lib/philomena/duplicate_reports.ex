@@ -1,16 +1,16 @@
-defmodule Philomena.DuplicateReports do
+defmodule Ineedthis.DuplicateReports do
   @moduledoc """
   The DuplicateReports context.
   """
 
   import Ecto.Query, warn: false
   alias Ecto.Multi
-  alias Philomena.Repo
+  alias Ineedthis.Repo
 
-  alias Philomena.DuplicateReports.DuplicateReport
-  alias Philomena.ImageIntensities.ImageIntensity
-  alias Philomena.Images.Image
-  alias Philomena.Images
+  alias Ineedthis.DuplicateReports.DuplicateReport
+  alias Ineedthis.ImageIntensities.ImageIntensity
+  alias Ineedthis.Images.Image
+  alias Ineedthis.Images
 
   def generate_reports(source) do
     source = Repo.preload(source, :intensity)
