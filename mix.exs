@@ -34,19 +34,19 @@ defmodule Ineedthis.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.5"},
+      {:phoenix, "~> 1.5.9"},
       {:phoenix_pubsub, "~> 2.0"},
       {:phoenix_ecto, "~> 4.2"},
       {:ecto_sql, "~> 3.5"},
       {:postgrex, ">= 0.0.0"},
-      {:phoenix_html, "~> 2.14"},
+      {:phoenix_html, "~> 3.0", override: true},
       {:phoenix_live_reload, "~> 1.3", only: :dev},
       {:floki, ">= 0.30.0", only: :test},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:ranch, "~> 1.6", override: true},
       {:plug_cowboy, "~> 2.3"},
-      {:phoenix_slime, "~> 0.13"},
+      {:phoenix_slime, github: "marcandre/phoenix_slime"},
       {:phoenix_pubsub_redis, "~> 3.0"},
       {:ecto_network, "~> 1.3"},
       {:ecto_psql_extras, "~> 0.2"},
@@ -65,17 +65,18 @@ defmodule Ineedthis.MixProject do
       {:bamboo_smtp, "~> 3.1"},
       {:remote_ip, "~> 0.2"},
       {:briefly, "~> 0.3"},
-      {:phoenix_mtm, "~> 1.0"},
+      {:phoenix_mtm, github: "mjcloutier/phoenix_mtm"},
       {:tesla, "~> 1.4"},
       {:castore, "~> 0.1"},
       {:mint, "~> 1.2"},
       {:exq, "~> 0.14"},
 
       # LiveView
-      {:phoenix_live_view, "~> 0.15.4"},
-      {:phoenix_live_dashboard, "~> 0.1"},
-      {:telemetry_poller, "~> 0.4"},
-      {:telemetry_metrics, "~> 0.4"},
+      {:phoenix_live_view, "~> 0.16.1"},
+      {:phoenix_live_dashboard, "~> 0.5"},
+      {:telemetry, "~> 1.0", override: true},
+      {:telemetry_poller, "~> 1.0"},
+      {:telemetry_metrics, "~> 0.6.1"},
 
       # Linting
       {:credo, "~> 1.5", only: [:dev, :test], override: true},

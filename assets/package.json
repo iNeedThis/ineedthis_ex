@@ -13,7 +13,6 @@
     "postcss": "^8.3.5"
   },
   "devDependencies": {
-    "@types/phoenix_live_view": "^0.15.0",
     "acorn": "^7.4.1",
     "autoprefixer": "^10.2.6",
     "copy-webpack-plugin": "^6.4.1",

@@ -35,7 +35,7 @@ defmodule IneedthisWeb do
         namespace: IneedthisWeb
 
       # Import convenience functions from controllers
-      import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
+      import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1, view_template: 1]
 
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
@@ -50,6 +50,9 @@ defmodule IneedthisWeb do
 
       # Add LiveView
       import Phoenix.LiveView.Helpers
+
+      # # Include shared imports and aliases for views
+      unquote(view_helpers())
     end
   end
 
@@ -81,9 +84,9 @@ defmodule IneedthisWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import MyAppWeb.ErrorHelpers
-      import MyAppWeb.Gettext
-      alias MyAppWeb.Router.Helpers, as: Routes
+      import IneedthisWeb.ErrorHelpers
+      import IneedthisWeb.Gettext
+      alias IneedthisWeb.Router.Helpers, as: Routes
     end
   end
 
