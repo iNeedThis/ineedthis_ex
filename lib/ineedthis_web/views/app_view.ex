@@ -44,7 +44,7 @@ defmodule IneedthisWeb.AppView do
   end
 
   def tag_list(image) do
-    Philomena.Images.tag_list(image)
+    Ineedthis.Images.tag_list(image)
   end
 
   def distance_of_time_in_words(time_2, time_1) do
