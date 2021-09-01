@@ -11,7 +11,7 @@ defmodule IneedthisWeb.Api.Json.OembedView do
     %{
       version: "1.0",
       type: "photo",
-      title: "##{image.id} - #{image.tag_list_cache} - ineedthis",
+      title: "##{image.id} - #{tag_list(image)} - ineedthis",
       author_url: image.source_url || "",
       author_name: artist_tags(image.tags),
       provider_name: "ineedthis",

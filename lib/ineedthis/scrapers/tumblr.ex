@@ -22,9 +22,7 @@ defmodule Ineedthis.Scrapers.Tumblr do
     [post_id] = Regex.run(@url_regex, url, capture: :all_but_first)
 
     api_url =
-      "https://api.tumblr.com/v2/blog/#{uri.host}/posts/photo?id=#{post_id}&api_key=#{
-        tumblr_api_key()
-      }"
+      "https://api.tumblr.com/v2/blog/#{uri.host}/posts/photo?id=#{post_id}&api_key=#{tumblr_api_key()}"
 
     Ineedthis.Http.get(api_url)
     |> json!()

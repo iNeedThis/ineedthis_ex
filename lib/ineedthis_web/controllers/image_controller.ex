@@ -95,7 +95,7 @@ defmodule IneedthisWeb.ImageController do
       interactions: interactions,
       watching: watching,
       layout_class: "layout--wide",
-      title: "##{image.id} - #{image.tag_list_cache}"
+      title: "##{image.id} - #{Images.tag_list(image)}"
     ]
 
     if image.hidden_from_users do
